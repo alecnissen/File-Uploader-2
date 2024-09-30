@@ -9,3 +9,15 @@
 // so if login info is valid, give users access to the form were they can upload a file 
 
 
+// ** 
+
+// I can create a user 
+
+// but after I solve the views error
+
+// I need to query my database to be 100% 
+
+// then finish making the POST code 
+
+// sanitation and password validation *** 
+

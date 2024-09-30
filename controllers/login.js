@@ -18,5 +18,4 @@ exports.log_in_post = (req, res, next) => {
         console.error("Error handling login:", err);
         next(err);
       }
-    
 }
