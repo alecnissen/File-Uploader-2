@@ -14,6 +14,14 @@
     
         <label>Password</label>
         <input type="password" name="password" required>
+
+        <% if (errors && errors.length > 0) { %>
+            <ul>
+              <% errors.forEach(function(error) { %>
+                <li><%= error.msg %></li>
+              <% }); %>
+            </ul>
+          <% } %>
     
         <button type="submit">Submit</button>
     </form>
