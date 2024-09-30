@@ -1,6 +1,6 @@
 const { body, validationResult } = require("express-validator");
 const asyncHandler = require("express-async-handler");
-
+const bcrypt = require("bcryptjs");
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
@@ -9,26 +9,15 @@ exports.create_user_get = (req, res, next) => {
   res.render('create_user', { title: 'Create User' });
 };
 
-// // exports.create_user_post = async (req, res, next) => {
-// try {
-//   console.log('Request body:', req.body);
-//   let checkUser = await prisma.users.findUnique({
-//     where: {
-//       email: req.body.email
-//     }
-//   });
-//   // res.redirect('/');
-// } catch (err) {
-//   console.error('Error handling login:', err);
-//   next(err);
-// }
-// // }
-
 exports.create_user_post = [
-
-
-// sanitize form data before being saved to the backend? 
-
+  body("username", "Username must contain at least 3 characters")
+  .trim()
+  .isLength({ min: 3 })
+  .escape(),
+  body("password", "Password must contain at least 3 characters")
+  .trim()
+  .isLength({ min: 3 })
+  .escape(),
 
 
 
@@ -42,6 +31,7 @@ exports.create_user_post = [
         });
         return;
     }
+
 
     try {
       console.log('Request body:', req.body);
@@ -60,11 +50,13 @@ exports.create_user_post = [
         });
         return;
       }
-
+      console.log('password before hashing',req.body.password);
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      console.log(hashedPassword);
       const user = await prisma.users.create({
         data: {
           username: req.body.username,
-          password: req.body.password
+          password: hashedPassword
         }
       });
 
