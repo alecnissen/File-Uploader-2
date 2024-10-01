@@ -60,7 +60,6 @@ exports.create_user_post = [
         }
       });
 
-
       res.redirect("/");
 
       console.log('User created', user);
