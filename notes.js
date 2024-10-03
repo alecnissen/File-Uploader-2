@@ -39,3 +39,14 @@
 
 // Additional Validation: Besides checking if the email exists, you might want to validate the password's strength or other constraints based on your application’s requirements.
 
+// *** 
+
+
+// users are authorized, now I need to make a form for only authoirzed users 
+
+// I also need an option to ensure users can log out 
+
+// but first I need to conditionally render the form and log out option 
+
+// pass the user object to the index page .
+

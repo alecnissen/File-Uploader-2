@@ -8,6 +8,11 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+    <% if (user) { %>
+      <h1>WELCOME <%= user.username %></h1>
+      <a href="#">Create a file</a>
+    <% } %>
+
     <a href="login">Login</a>
     <a href="create_user">Create User</a>
   </body>

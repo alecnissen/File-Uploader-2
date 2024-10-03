@@ -64,6 +64,8 @@ exports.create_user_post = [
 
       console.log('User created', user);
 
+      
+
     } 
     
     
