@@ -9,6 +9,10 @@
     
     <h1>Login</h1>
 
+    <% if (locals.errorMessage) { %>
+        <p style="color: red;"><%= errorMessage %></p>
+      <% } %>
+
     <form method="post" action="/login" id="user-login-form">
         <label>Username</label>
         <input type="text" name="username" required>

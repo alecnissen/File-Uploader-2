@@ -64,11 +64,24 @@ exports.log_in_get = (req, res, next) => {
 
 
   exports.log_in_post = (req, res, next) => { 
-    try {
-        console.log("Request body:", req.body);
-        res.redirect('/');
-      } catch (err) {
-        console.error("Error handling login:", err);
-        next(err);
+  
+    passport.authenticate('local', (err, user, info) => { 
+      if (err) { 
+        return next(err);
       }
-}
+
+
+      if (!user) { 
+        console.log('Login failed');
+        return res.render('login', { title: 'Login', errorMessage: info.message})
+      }
+
+      req.logIn(user, (err) => { 
+        if (err) { 
+          return next(err);
+        }
+        console.log('Login successful');
+        return res.redirect('/');
+      });
+    })(req, res, next);
+};
