@@ -6,10 +6,12 @@
 // const prisma = new PrismaClient();
 
 
-
-
 exports.create_file_get = (req, res, next) => {
     res.render('create_a_file', { title: 'Create User', errors: [] });
   };
 
+exports.create_file_post = (req, res, next) => { 
+  console.log(req.file); 
+  res.redirect('/');
+}
 
