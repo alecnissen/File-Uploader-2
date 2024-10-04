@@ -50,3 +50,8 @@
 
 // pass the user object to the index page .
 
+// *** ok I can make the form 
+
+// now I need to create the entire form, and have that form saved someone
+
+// *** try to save the file into the DB, 

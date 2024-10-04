@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const createUserRouter = require('./routes/create_user');
 const logOutRouter = require('./routes/log_out');
+const createFileRouter = require('./routes/create_a_file');
 
 var app = express();
 
@@ -47,7 +48,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/create_user', createUserRouter);
 app.use('/log_out', logOutRouter);
-
+app.use('/create_a_file', createFileRouter);
 
 app.use((req, res, next) => {
   console.log(`${req.method} request for '${req.url}'`);
