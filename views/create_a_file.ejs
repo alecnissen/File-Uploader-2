@@ -15,5 +15,26 @@
         <button>Submit</button>
     </form>
 
+    <% if (errors && errors.length > 0) { %>
+      <ul>
+        <% errors.forEach(function(error) { %>
+          <li><%= error %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+    
+    <% if (messages && messages.length > 0) { %>
+      <ul>
+        <li><%= messages[0] %></li>
+      </ul>
+    <% } %>
+    
+    
+    
+      
+
+
+
+
 </body>
 </html>

@@ -57,3 +57,17 @@
 // *** try to save the file into the DB, 
 
 // *** properly upload the file
+
+// *** right now trying to ensure user can upload multiple 
+
+// different file types. 
+
+// first going to test with pdf file format 
+
+// ok we can upload the files 
+
+// but it seems like the format of the file does not get saved correctly 
+
+// like I am uploading a PDF file but it never shows in the uploads folder 
+
+// as a pdf 
