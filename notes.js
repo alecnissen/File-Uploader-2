@@ -71,3 +71,5 @@
 // like I am uploading a PDF file but it never shows in the uploads folder 
 
 // as a pdf 
+
+// *** make a connection between the two models 
