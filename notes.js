@@ -73,3 +73,9 @@
 // as a pdf 
 
 // *** make a connection between the two models 
+
+// *** connection is made, now need to figure out issue of the folder 
+
+// folder not being created correctly, check post controller 
+
+// *** I still need to ensure that the folders are being created correctly. 

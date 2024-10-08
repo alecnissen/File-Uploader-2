@@ -18,6 +18,15 @@
 
 
     <a href="/">Back to home</a>
+      
+      <% if (messages && messages.length > 0) { %>
+        <ul>
+          <li><%= messages[0] %></li>
+        </ul>
+      <% } %>
+
+
+
 
 </body>
 </html>
