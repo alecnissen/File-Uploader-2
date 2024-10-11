@@ -57,7 +57,8 @@ exports.create_folder_post = [
 
             const folderName = await prisma.folder.create({
                 data: { 
-                    name: req.body.folderName
+                    name: req.body.folderName,
+                    userId: req.user.id,
                 }
             })
 
@@ -70,7 +71,7 @@ exports.create_folder_post = [
 
             // res.redirect("/");
 
-            // console.log('Folder Created', folderName);
+            console.log('Folder Created', folderName);
 
 
         } catch (err) { 

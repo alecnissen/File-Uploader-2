@@ -78,4 +78,6 @@
 
 // folder not being created correctly, check post controller 
 
-// *** I still need to ensure that the folders are being created correctly. 
+// *** I still need to ensure that the folders are being created correctly.
+
+// *** folder being created effectively 
