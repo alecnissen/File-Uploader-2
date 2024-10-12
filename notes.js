@@ -81,3 +81,11 @@
 // *** I still need to ensure that the folders are being created correctly.
 
 // *** folder being created effectively 
+
+// *** next display all folders, update folders and delete them 
+
+// Add folders. Users should be able to CRUD folders and upload files in them. Set up routes and necessary database interactions for this.
+
+// *** can create folder, now need to read folders or display them, 
+
+// 
