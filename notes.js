@@ -88,4 +88,11 @@
 
 // *** can create folder, now need to read folders or display them, 
 
-// 
+// **** can now read and display folders via rout e
+
+// NOW WILL work on updating and deleting logic 
+
+// need to make a way to click on the folder so I can access a view to update or delete, 
+
+// *** DELETE FUNCTIONALITY 
+

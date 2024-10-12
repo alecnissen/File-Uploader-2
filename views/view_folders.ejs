@@ -11,9 +11,17 @@
 
     <ul>
         <% displayAllFolders.forEach(function(folder) { %>
-          <li><%= folder.name %></li>
+          <h1><%= folder.name %></h1>
+
+          <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
+          <button><a>Delete</a></button>
+          </form>
+
+          <button><a>Edit</a></button>
         <% }) %>
       </ul>
+
+      <a href="/">Back to home</a>
       
 
 </body>

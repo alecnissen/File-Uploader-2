@@ -16,6 +16,7 @@ const logOutRouter = require('./routes/log_out');
 const createFileRouter = require('./routes/create_a_file');
 const createFolderRouter = require('./routes/create_a_folder');
 const viewFolders = require('./routes/view_folders');
+const deleteFolders = require('./routes/delete_folder');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use('/log_out', logOutRouter);
 app.use('/create_a_file', createFileRouter);
 app.use('/create_a_folder', createFolderRouter);
 app.use('/view_folders', viewFolders);
+app.use('/delete_folder', deleteFolders);
 
 app.use((req, res, next) => {
   console.log(`${req.method} request for '${req.url}'`);
