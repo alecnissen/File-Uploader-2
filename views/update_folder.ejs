@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Update folder</h1>
+
+    <form method="post" action="/update_folder/<%= folder.id %>">
+    <label>Change folder name</label>
+    <input type="text" name="folderName" value="<%= folder.name %>" />
+    <button type="submit">Submit</button>
+    </form>
+
+
+    <% if (errors && errors.length > 0) { %>
+        <ul>
+          <% errors.forEach(function(error) { %>
+            <li><%= error.msg %></li>
+          <% }); %>
+        </ul>
+      <% } %>
+
+      console.log("Folder ID in view:", folder.id);
+      console.log("Folder name in view:", folder.name);
+
+
+</body>
+</html>

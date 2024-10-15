@@ -17,7 +17,11 @@
           <button><a>Delete</a></button>
           </form>
 
-          <button><a>Edit</a></button>
+          <form method="get" action="/update_folder/<%= folder.id %>">
+          <button>Edit</button>
+          </form>
+
+
         <% }) %>
       </ul>
 
