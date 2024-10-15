@@ -9,11 +9,14 @@
     
     <h1>Update folder</h1>
 
+    <p>Folder ID: <%= folder.id %></p> <!-- Debug -->
     <form method="post" action="/update_folder/<%= folder.id %>">
     <label>Change folder name</label>
     <input type="text" name="folderName" value="<%= folder.name %>" />
     <button type="submit">Submit</button>
     </form>
+
+
 
 
     <% if (errors && errors.length > 0) { %>
@@ -24,8 +27,7 @@
         </ul>
       <% } %>
 
-      console.log("Folder ID in view:", folder.id);
-      console.log("Folder name in view:", folder.name);
+      
 
 
 </body>
