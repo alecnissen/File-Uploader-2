@@ -20,10 +20,30 @@
           <form method="get" action="/update_folder/<%= folder.id %>">
           <button>Edit</button>
           </form>
-
+        
+        <form action="/upload_a_file" method="post" enctype="multipart/form-data">
+          <input type="file" name="file"> 
+          <button type="submit">Upload a file</button>
+        </form>
 
         <% }) %>
       </ul>
+
+      <% if (errors && errors.length > 0) { %>
+        <ul>
+          <% errors.forEach(function(error) { %>
+            <li><%= error %></li>
+          <% }); %>
+        </ul>
+      <% } %>
+      
+      <% if (messages && messages.length > 0) { %>
+        <ul>
+          <li><%= messages[0] %></li>
+        </ul>
+      <% } %>
+      
+      
 
       <a href="/">Back to home</a>
       

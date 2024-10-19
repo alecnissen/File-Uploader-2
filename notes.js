@@ -96,3 +96,10 @@
 
 // *** DELETE FUNCTIONALITY 
 
+// **** upload files into folders
+
+// how can I upload files into folders ? 
+
+// it will be a post request, no view required 
+
+// 

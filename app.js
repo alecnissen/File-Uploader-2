@@ -18,6 +18,7 @@ const createFolderRouter = require('./routes/create_a_folder');
 const viewFolders = require('./routes/view_folders');
 const deleteFolders = require('./routes/delete_folder');
 const updateFolders = require('./routes/update_folder');
+const uploadFilesInFolders = require('./routes/upload_a_file');
 
 var app = express();
 
@@ -56,8 +57,8 @@ app.use('/create_a_file', createFileRouter);
 app.use('/create_a_folder', createFolderRouter);
 app.use('/view_folders', viewFolders);
 app.use('/delete_folder', deleteFolders);
-// app.use('/update_folder', updateFolders);
 app.use('/', updateFolders);
+app.use('/upload_a_file', uploadFilesInFolders);
 
 app.use((req, res, next) => {
   console.log(`Request URL: ${req.url}`);
