@@ -8,7 +8,11 @@ async function main() {
   // const allUsers = await prisma.users.findMany()
   // console.log(allUsers)
 
-  const allFolders = await prisma.folder.findMany()
+  const allFolders = await prisma.folder.findMany({
+    include: { 
+      files: true
+    }
+  })
   console.log(allFolders);
 
 

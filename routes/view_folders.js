@@ -11,6 +11,6 @@ router.get('/', viewFolderController.view_folders_get);
 
 // router.post('/', upload.single('file'), uploadFileController.upload_file_post);
 
-router.post('/', upload.single('file'), uploadFileController.upload_file_post);
+router.post('/:id', upload.single('file'), uploadFileController.upload_file_post);
 
 module.exports = router;
