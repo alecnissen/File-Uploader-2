@@ -125,3 +125,26 @@
 // You need to handle where the file is stored and ensure it's linked to the folder it belongs to.
 
 // Folder Selection: If you're allowing users to upload files into specific folders, make sure the form correctly identifies which folder the file should be uploaded to. This may require adding hidden fields or additional logic to associate the file with the correct folder.
+
+
+// *** can upload files into folders 
+
+// now I need to render a new view that can display file information 
+
+// and also give the user the ability to download the file 
+
+// will need to pass the folder id as well so user can get access to certain files
+
+
+
+// *** 
+
+// How can I view a particular files information? 
+
+// when its link is clicked on? 
+
+// once link is clicked it will have to show the specific file details 
+
+// it will have to show all the files and details associated with that folder 
+
+// 
