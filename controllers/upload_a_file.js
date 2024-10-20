@@ -18,14 +18,15 @@ const fileFilter = (req, file, cb) => {
     }
   };
   
-  exports.upload_file_post = (req, res, next) => {
+  exports.upload_file_post = async (req, res, next) => {
+    const displayAllFolders = await prisma.folder.findMany();
     if (req.file) {
       console.log('File uploaded successfully');
       req.message = 'File uploaded successfully';
-      res.render('view_folders', { title: 'Create File', messages: [req.message], errors: [] });
+      res.render('view_folders', { title: 'Create File', messages: [req.message], errors: [], displayAllFolders });
     } else { 
       const errorMsg = 'Error: No file or invalid file type';
-      res.render('view_folders', { title: 'Create File', errors: [errorMsg], messages: [] });
+      res.render('view_folders', { title: 'Create File', errors: [errorMsg], messages: [], displayAllFolders });
     }
   };
 
