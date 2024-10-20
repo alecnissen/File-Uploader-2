@@ -11,7 +11,7 @@
 
     <ul>
         <% displayAllFolders.forEach(function(folder) { %>
-          <a href="view_file_information"><%= folder.name %></a>
+          <a href="/view_file_information/<%=folder.id %>"><%= folder.name %></a>
 
           <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
           <button><a>Delete</a></button>

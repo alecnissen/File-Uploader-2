@@ -41,6 +41,8 @@ model File {
   id          Int      @id @default(autoincrement())
   fileName String
   filePath String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   folderId Int
   folder Folder? @relation(fields: [folderId], references: [id])
 }

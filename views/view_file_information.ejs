@@ -7,5 +7,20 @@
 </head>
 <body>
     <h1>File information</h1>
+
+    <%= currentFolder.name %>
+
+    <% if (files && files.length > 0) { %>
+        <ul>
+            <% files.forEach((file) => { %>
+                <li><%=file.fileName %></li>
+                <li><%=file.createdAt %></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No files found for this folder</p>
+    <% } %>
+  
+
 </body>
 </html>

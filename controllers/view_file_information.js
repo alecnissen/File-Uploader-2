@@ -10,6 +10,10 @@ exports.view_file_information_get = async (req, res, next) => {
         }
     })
 
+    if (!currentFolder) {
+        return res.status(404).send('Folder not found');
+    }
+
     const getFilesFromFolder = await prisma.file.findMany({
         where: { 
             folderId: currentFolder.id
@@ -17,6 +21,5 @@ exports.view_file_information_get = async (req, res, next) => {
     })
 
     res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder } );
-
     
 }
