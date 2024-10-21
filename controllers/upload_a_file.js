@@ -40,7 +40,8 @@ const fileFilter = (req, file, cb) => {
                 data: {
                     fileName: req.file.originalname,
                     filePath: req.file.path,
-                    folderId: findFolderInDB.id,  // Associate with the correct folder
+                    folderId: findFolderInDB.id, 
+                    size: req.file.size
                 },
             });
 

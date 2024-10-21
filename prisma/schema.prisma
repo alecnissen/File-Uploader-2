@@ -42,6 +42,8 @@ model File {
   fileName String
   filePath String
   folderId Int
+  createdAt   DateTime @default(now())
+  size        Int
   folder Folder? @relation(fields: [folderId], references: [id], onDelete: Cascade)
 }
 

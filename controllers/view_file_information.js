@@ -1,7 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient(); 
 
-
 exports.view_file_information_get = async (req, res, next) => { 
 
     const currentFolder = await prisma.folder.findUnique({
@@ -19,6 +18,8 @@ exports.view_file_information_get = async (req, res, next) => {
             folderId: currentFolder.id
         }
     })
+
+    console.log('logging the file details', getFilesFromFolder);
 
     res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder } );
     
