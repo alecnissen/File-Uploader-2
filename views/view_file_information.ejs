@@ -22,6 +22,14 @@
             <% }) %>
         </ul>
 
+        <% if (errors && errors.length > 0) { %>
+            <ul>
+              <% errors.forEach(function(error) { %>
+                <li><%= error %></li>
+              <% }); %>
+            </ul>
+          <% } %>
+
         
     <% } else { %>
         <p>No files found for this folder</p>

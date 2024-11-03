@@ -21,6 +21,6 @@ exports.view_file_information_get = async (req, res, next) => {
 
     console.log('logging the file details', getFilesFromFolder);
 
-    res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder } );
+    res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder, errors: [] } );
     
 }

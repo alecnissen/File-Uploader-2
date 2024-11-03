@@ -153,3 +153,8 @@
 // **** 
 
 // users can see file details, now the next step is to have users download the file
+
+// I can download files but I now need to ensure I handle errors or 
+
+// when the file is not found
+
