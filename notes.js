@@ -148,3 +148,8 @@
 // it will have to show all the files and details associated with that folder 
 
 // 
+
+
+// **** 
+
+// users can see file details, now the next step is to have users download the file

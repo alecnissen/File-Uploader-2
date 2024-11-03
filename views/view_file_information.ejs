@@ -13,11 +13,18 @@
     <% if (files && files.length > 0) { %>
         <ul>
             <% files.forEach((file) => { %>
-                <li><%=file.fileName %></li>
-                <li><%=file.createdAt %></li>
-                <li><%=file.size %></li>
+                <li>File Name: <%=file.fileName %></li>
+                <li>Created At: <%=file.createdAt %></li>
+                <li>File Size: <%=file.size %></li>
+                
+                <form action="/download_file" method="get">
+                <button type="submit">Download</button>
+                </form>
+
             <% }) %>
         </ul>
+
+        
     <% } else { %>
         <p>No files found for this folder</p>
     <% } %>

@@ -20,6 +20,7 @@ const deleteFolders = require('./routes/delete_folder');
 const updateFolders = require('./routes/update_folder');
 const uploadFilesInFolders = require('./routes/view_folders');
 const viewFileInformation = require('./routes/view_file_information');
+const downloadFile = require('./routes/download_file');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use('/delete_folder', deleteFolders);
 app.use('/', updateFolders);
 app.use('/view_folders', uploadFilesInFolders);
 app.use('/view_file_information', viewFileInformation);
+app.use('/download_file', downloadFile);
 
 app.use((req, res, next) => {
   console.log(`Request URL: ${req.url}`);
