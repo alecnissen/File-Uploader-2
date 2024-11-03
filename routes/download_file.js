@@ -3,6 +3,6 @@ const router = express.Router();
 
 const downloadFile = require('../controllers/download_file');
 
-router.get('/', downloadFile.download_file_get);
+router.get('/:id', downloadFile.download_file_get);
 
 module.exports = router;

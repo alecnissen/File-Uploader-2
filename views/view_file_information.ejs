@@ -17,9 +17,7 @@
                 <li>Created At: <%=file.createdAt %></li>
                 <li>File Size: <%=file.size %></li>
                 
-                <form action="/download_file" method="get">
-                <button type="submit">Download</button>
-                </form>
+               <button><a href="/download_file/<%=file.id %>" download>Download</a></button>
 
             <% }) %>
         </ul>
