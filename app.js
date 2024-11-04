@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -21,6 +21,48 @@ const updateFolders = require('./routes/update_folder');
 const uploadFilesInFolders = require('./routes/view_folders');
 const viewFileInformation = require('./routes/view_file_information');
 const downloadFile = require('./routes/download_file');
+
+// cloudinary code 
+
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: 'dyal6nkwn',
+  secure: true,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const url = cloudinary.url('528b04e489370e37d23a6045fadce1b1_ocx8uw', { 
+  transformation: [
+    { 
+      fetch_format: 'auto'
+    },
+    { 
+      quality: 'auto'
+    }
+  ]
+});
+
+console.log(url);
+
+
+(async function() { 
+  const results = await cloudinary.uploader.upload('uploads/1b2a934127195d32150b4fd8193f3a61');
+  console.log(results);
+  const url = cloudinary.url(results.public_id, {
+    transformation: [
+      { 
+        quality: 'auto',
+        fetch_format: 'auto'
+      }
+    ]
+  })
+  console.log(results);
+})();
+
+
+// 
 
 var app = express();
 
