@@ -5,4 +5,6 @@ const viewFileInformationController = require('../controllers/view_file_informat
 
 router.get('/:id', viewFileInformationController.view_file_information_get);
 
+router.post('/:id', viewFileInformationController.view_file_information_post);
+
 module.exports = router;
