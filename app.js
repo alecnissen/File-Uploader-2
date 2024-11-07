@@ -22,6 +22,7 @@ const uploadFilesInFolders = require('./routes/view_folders');
 const viewFileInformation = require('./routes/view_file_information');
 const downloadFile = require('./routes/download_file');
 const uploadFileToCloud = require('./routes/upload_file_to_cloud');
+const filesInFolder = require('./routes/files_in_folder');
 
 // cloudinary code 
 
@@ -107,6 +108,7 @@ app.use('/view_folders', uploadFilesInFolders);
 app.use('/view_file_information', viewFileInformation);
 app.use('/download_file', downloadFile);
 app.use('/upload_file_to_cloud', uploadFileToCloud);
+app.use('/files_in_folder', filesInFolder);
 
 app.use((req, res, next) => {
   console.log(`Request URL: ${req.url}`);

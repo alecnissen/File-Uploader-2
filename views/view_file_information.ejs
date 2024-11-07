@@ -19,8 +19,13 @@
                 
                <button><a href="/download_file/<%=file.id %>" download>Download</a></button>
 
-               <button><a href="/view_file_information/<%=file.id %>">Upload File</a></button>
+               <!-- <button><a href="/view_file_information/<%= currentFolder.id %>/<%= file.id %>">Upload File</a></button> -->
 
+
+               <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
+                <button type="submit">Upload File</button>
+                </form>
+            
                
 
             <% }) %>
