@@ -4,6 +4,10 @@ const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
 const path = require('path');
 
+const multer = require('multer');
+const storage = multer.memoryStorage();  // Store file in memory
+const upload = multer({ storage: storage }).single('file');
+
 
 
 // exports.view_file_information_get = async (req, res, next) => { 
@@ -265,12 +269,6 @@ exports.view_file_information_get = async (req, res, next) => {
 
 // }
 
-const multer = require('multer');
-
-
-// Configure multer
-const storage = multer.memoryStorage();  // Store file in memory
-const upload = multer({ storage: storage }).single('file');
 
 
 // In view_file_information.js (or your controller file)
@@ -331,33 +329,85 @@ const upload = multer({ storage: storage }).single('file');
 
 
 
+// no file uploaded error code 
+
+// exports.view_file_information_post = async (req, res) => {
+//   try {
+//     // Check if the file exists in the request
+//     if (!req.file) {
+//       return res.status(400).send('No file uploaded');
+//     }
+
+//     // Upload to Cloudinary
+//     const result = await cloudinary.uploader.upload_stream({
+//       folder: 'your-folder-name',  // Optional: specify folder in Cloudinary
+//       resource_type: 'auto',  // Automatically detect file type
+//     }, (error, result) => {
+//       if (error) {
+//         console.error('Cloudinary upload error:', error);
+//         return res.status(500).send('Error uploading to Cloudinary');
+//       }
+//       console.log('File uploaded to Cloudinary:', result);
+//       // Proceed with saving the file details to your database or additional logic
+//       res.status(200).send('File uploaded successfully');
+//     });
+
+//     req.file.stream.pipe(result);  // Upload the file stream to Cloudinary
+
+//   } catch (error) {
+//     console.error('Error in POST handler:', error);
+//     res.status(500).send('Error uploading the file');
+//   }
+// };
+
+
+
+
+
 
 exports.view_file_information_post = async (req, res) => {
+  const { folderId, fileId } = req.params;
+
   try {
-    // Check if the file exists in the request
-    if (!req.file) {
-      return res.status(400).send('No file uploaded');
-    }
+      // Retrieve file information from the database
+      const file = await prisma.file.findUnique({
+          where: { id: parseInt(fileId) },
+      });
 
-    // Upload to Cloudinary
-    const result = await cloudinary.uploader.upload_stream({
-      folder: 'your-folder-name',  // Optional: specify folder in Cloudinary
-      resource_type: 'auto',  // Automatically detect file type
-    }, (error, result) => {
-      if (error) {
-        console.error('Cloudinary upload error:', error);
-        return res.status(500).send('Error uploading to Cloudinary');
+      if (!file) {
+          return res.status(404).send('File not found');
       }
-      console.log('File uploaded to Cloudinary:', result);
-      // Proceed with saving the file details to your database or additional logic
-      res.status(200).send('File uploaded successfully');
-    });
 
-    req.file.stream.pipe(result);  // Upload the file stream to Cloudinary
+      // Ensure the file path exists on your server
+      if (!fs.existsSync(file.filePath)) {
+          return res.status(400).send('File path does not exist on the server');
+      }
 
+      // Upload the file to Cloudinary
+      cloudinary.uploader.upload(
+          file.filePath,
+          {
+              folder: 'your-folder-name', // Optional: specify folder in Cloudinary
+          },
+          (error, result) => {
+              if (error) {
+                  console.error('Cloudinary upload error:', error);
+                  return res.status(500).send('Error uploading to Cloudinary');
+              }
+
+              console.log('File uploaded to Cloudinary:', result);
+
+              // Optionally, update the file record in the database with the Cloudinary URL
+              prisma.file.update({
+                  where: { id: parseInt(fileId) },
+                  data: { filePath: result.secure_url },
+              }).catch((err) => console.error('Error updating database:', err));
+
+              res.status(200).send('File uploaded successfully to Cloudinary');
+          }
+      );
   } catch (error) {
-    console.error('Error in POST handler:', error);
-    res.status(500).send('Error uploading the file');
+      console.error('Error in POST handler:', error);
+      res.status(500).send('Error uploading the file');
   }
 };
-
