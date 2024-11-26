@@ -161,3 +161,12 @@
 
 // *** 
 
+
+// files are properly being updated into cloudinary 
+
+// and success message is displaying 
+
+// *** next figure out a way to erase the error message or have 
+
+// the message re-appear once another file has been uploaded 
+

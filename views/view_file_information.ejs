@@ -8,6 +8,19 @@
 <body>
     <h1>File information</h1>
 
+
+    <% if (messages && messages.length > 0) { %>
+        <div class="alert alert-success">
+          <%= messages[0] %>
+        </div>
+      <% } %>
+      
+      <% if (errors.length > 0) { %>
+        <div class="alert alert-danger">
+          <%= errors[0] %>
+        </div>
+      <% } %>
+
     <%= currentFolder.name %>
 
     <% if (files && files.length > 0) { %>
@@ -38,6 +51,7 @@
                     <button type="submit">Upload This File</button>
                 </form>
                 
+                
             
                
 
@@ -56,6 +70,9 @@
     <% } else { %>
         <p>No files found for this folder</p>
     <% } %>
+
+
+  
   
 
 </body>

@@ -10,159 +10,6 @@ const upload = multer({ storage: storage }).single('file');
 
 
 
-// exports.view_file_information_get = async (req, res, next) => { 
-//   console.log('Requested folder ID:', req.params.folderId);
-
-//   const currentFolder = await prisma.folder.findUnique({
-//       where: { id: Number(req.params.folderId) }
-//   });
-
-//   if (!currentFolder) {
-//       return res.status(404).send('Folder not found');
-//   }
-
-//   const getFilesFromFolder = await prisma.file.findMany({
-//       where: { folderId: currentFolder.id }
-//   });
-
-//   console.log('Current folder retrieved:', currentFolder);
-//   console.log('Files in folder:', getFilesFromFolder);
-
-//   res.render('view_file_information', { 
-//       title: 'View File Info', 
-//       currentFolder, 
-//       files: getFilesFromFolder, 
-//       errors: [] 
-//   });
-// };
-
-
-
-
-
-// exports.view_file_information_post = async (req, res, next) => { 
-//   console.log('Request params:', req.params);
-
-//   const currentFolder = await prisma.folder.findUnique({
-//       where: { id: Number(req.params.folderId) }
-//   });
-
-//   if (!currentFolder) {
-//       return res.status(404).send('Folder not found');
-//   }
-
-//   const fileToUpload = await prisma.file.findUnique({
-//       where: { id: Number(req.params.fileId) }
-//   });
-
-//   if (!fileToUpload) {
-//       return res.status(404).send('File not found');
-//   }
-
-//   const cloudinary = require('cloudinary').v2;
-//   cloudinary.config({
-//     cloud_name: 'dyal6nkwn',
-//     secure: true,
-//     api_key: process.env.CLOUDINARY_API_KEY,
-//     api_secret: process.env.CLOUDINARY_API_SECRET
-//   });
-
-//   try {
-//       const results = await cloudinary.uploader.upload(req.file.path, {
-//           transformation: [{ quality: 'auto', fetch_format: 'auto' }]
-//       });
-//       console.log('File uploaded:', results);
-//       res.send(`File uploaded successfully: ${results.secure_url}`);
-//   } catch (error) {
-//       console.error('Error uploading file:', error);
-//       res.status(500).send('Error uploading file to the cloud');
-//   }
-// };
-
-
-
-
-
-
-
-
-// exports.view_file_information_post = async (req, res, next) => { 
-//   console.log('Request params:', req.params);
-//   console.log('Requested folder ID:', req.params.folderId);
-//   console.log('Requested file ID:', req.params.fileId);
-
-//   // Find the current folder by folderId
-//   const currentFolder = await prisma.folder.findUnique({
-//       where: { id: Number(req.params.folderId) }
-//   });
-
-//   if (!currentFolder) {
-//       return res.status(404).send('Folder not found');
-//   }
-
-//   // Find the file by fileId within the folder
-//   const fileToUpload = await prisma.file.findUnique({
-//       where: { id: Number(req.params.fileId) }
-//   });
-
-//   if (!fileToUpload) {
-//       return res.status(404).send('File not found');
-//   }
-
-//   // Cloudinary configuration and file upload
-//   const cloudinary = require('cloudinary').v2;
-//   cloudinary.config({
-//     cloud_name: 'dyal6nkwn',
-//     secure: true,
-//     api_key: process.env.CLOUDINARY_API_KEY,
-//     api_secret: process.env.CLOUDINARY_API_SECRET
-//   });
-
-//   try {
-//       const uploadPath = `uploads/${fileToUpload.fileName}`;
-//       const results = await cloudinary.uploader.upload(uploadPath, {
-//           transformation: [
-//               { quality: 'auto', fetch_format: 'auto' }
-//           ]
-//       });
-      
-//       console.log('File uploaded:', results);
-//       res.send(`File uploaded successfully: ${results.secure_url}`);
-//   } catch (error) {
-//       console.error('Error uploading file:', error);
-//       res.status(500).send('Error uploading file to the cloud');
-//   }
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // OG
 
 exports.view_file_information_get = async (req, res, next) => { 
@@ -192,7 +39,7 @@ exports.view_file_information_get = async (req, res, next) => {
 
     console.log('logging the file details', getFilesFromFolder);
 
-    res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder, errors: [] } );
+    res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder, errors: [], messages: [] } );
     
 }
 
@@ -271,55 +118,61 @@ exports.view_file_information_get = async (req, res, next) => {
 
 
 
-// In view_file_information.js (or your controller file)
+// *** KEEP 
+
+
+
+
+
+
+
+// WORKS!!!
+
 // exports.view_file_information_post = async (req, res) => {
-//       const cloudinary = require('cloudinary').v2;
+//   const { folderId, fileId } = req.params;
 
-//     cloudinary.config({
-//       cloud_name: 'dyal6nkwn',
-//       secure: true,
-//       api_key: process.env.CLOUDINARY_API_KEY,
-//       api_secret: process.env.CLOUDINARY_API_SECRET
-//     });
 //   try {
-//       // Extract folderId and fileId from the URL parameters
-//       const { folderId, fileId } = req.params;
-
-//       // Parse the IDs to integers
-//       const parsedFolderId = parseInt(folderId, 10);
-//       const parsedFileId = parseInt(fileId, 10);
-
-//       console.log('Parsed folderId:', parsedFolderId);
-//       console.log('Parsed fileId:', parsedFileId);
-
-//       // Ensure the parsed IDs are valid integers
-//       if (isNaN(parsedFolderId) || isNaN(parsedFileId)) {
-//           return res.status(400).send('Invalid folder or file ID');
-//       }
-
-//       // Retrieve the current folder and file details from the database
-//       const currentFolder = await prisma.folder.findUnique({
-//           where: {
-//               id: parsedFolderId,  // Ensure to use parsed integer for folderId
-//           },
+//       // Retrieve file information from the database
+//       const file = await prisma.file.findUnique({
+//           where: { id: parseInt(fileId) },
 //       });
 
-//       const fileToUpload = await prisma.file.findUnique({
-//           where: {
-//               id: parsedFileId,  // Ensure to use parsed integer for fileId
-//           },
-//       });
-
-//       // Handle if folder or file is not found
-//       if (!currentFolder || !fileToUpload) {
-//           return res.status(404).send('Folder or file not found');
+//       if (!file) {
+//           return res.status(404).send('File not found');
 //       }
 
-//       // Proceed with your file upload logic here
-//       // (for example, saving the file, performing other database operations, etc.)
+//       // Ensure the file path exists on your server
+//       if (!fs.existsSync(file.filePath)) {
+//           return res.status(400).send('File path does not exist on the server');
+//       }
 
-//       res.status(200).send('File uploaded successfully');
-      
+//       // Upload the file to Cloudinary
+//       cloudinary.uploader.upload(
+//           file.filePath,
+//           {
+//               folder: 'your-folder-name', // Optional: specify folder in Cloudinary
+//           },
+//           (error, result) => {
+//               if (error) {
+//                   console.error('Cloudinary upload error:', error);
+//                   // return res.status(500).send('Error uploading to Cloudinary');
+//                   const errorMsg = 'Error: Something went wrong';
+//                   res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder, errors: [errorMsg], messages: [] } );
+//               }
+
+//               console.log('File uploaded to Cloudinary:', result);
+
+//               // Optionally, update the file record in the database with the Cloudinary URL
+//               // prisma.file.update({
+//               //     where: { id: parseInt(fileId) },
+//               //     data: { filePath: result.secure_url },
+//               // }).catch((err) => console.error('Error updating database:', err));
+//               console.log('File uploaded successfully');
+//               req.message = 'File uploaded successfully';
+//               res.render('view_file_information', { title: 'View File Info', currentFolder, files: getFilesFromFolder, errors: [], messages: [req.message] } );
+//               // res.status(200).send('File uploaded successfully to Cloudinary');
+//           }
+//       );
 //   } catch (error) {
 //       console.error('Error in POST handler:', error);
 //       res.status(500).send('Error uploading the file');
@@ -329,85 +182,78 @@ exports.view_file_information_get = async (req, res, next) => {
 
 
 
-// no file uploaded error code 
-
-// exports.view_file_information_post = async (req, res) => {
-//   try {
-//     // Check if the file exists in the request
-//     if (!req.file) {
-//       return res.status(400).send('No file uploaded');
-//     }
-
-//     // Upload to Cloudinary
-//     const result = await cloudinary.uploader.upload_stream({
-//       folder: 'your-folder-name',  // Optional: specify folder in Cloudinary
-//       resource_type: 'auto',  // Automatically detect file type
-//     }, (error, result) => {
-//       if (error) {
-//         console.error('Cloudinary upload error:', error);
-//         return res.status(500).send('Error uploading to Cloudinary');
-//       }
-//       console.log('File uploaded to Cloudinary:', result);
-//       // Proceed with saving the file details to your database or additional logic
-//       res.status(200).send('File uploaded successfully');
-//     });
-
-//     req.file.stream.pipe(result);  // Upload the file stream to Cloudinary
-
-//   } catch (error) {
-//     console.error('Error in POST handler:', error);
-//     res.status(500).send('Error uploading the file');
-//   }
-// };
-
-
-
 
 
 
 exports.view_file_information_post = async (req, res) => {
   const { folderId, fileId } = req.params;
-
+  
   try {
-      // Retrieve file information from the database
-      const file = await prisma.file.findUnique({
-          where: { id: parseInt(fileId) },
-      });
+    // Retrieve folder and files to pass to the view
+    const currentFolder = await prisma.folder.findUnique({
+        where: { id: Number(folderId) },
+    });
 
-      if (!file) {
-          return res.status(404).send('File not found');
-      }
+    if (!currentFolder) {
+      return res.status(404).send('Folder not found');
+    }
 
-      // Ensure the file path exists on your server
-      if (!fs.existsSync(file.filePath)) {
-          return res.status(400).send('File path does not exist on the server');
-      }
+    const getFilesFromFolder = await prisma.file.findMany({
+        where: { folderId: currentFolder.id },
+    });
 
-      // Upload the file to Cloudinary
-      cloudinary.uploader.upload(
-          file.filePath,
-          {
-              folder: 'your-folder-name', // Optional: specify folder in Cloudinary
-          },
-          (error, result) => {
-              if (error) {
-                  console.error('Cloudinary upload error:', error);
-                  return res.status(500).send('Error uploading to Cloudinary');
-              }
+    // Retrieve file information from the database
+    const file = await prisma.file.findUnique({
+        where: { id: parseInt(fileId) },
+    });
 
-              console.log('File uploaded to Cloudinary:', result);
+    if (!file) {
+        return res.status(404).send('File not found');
+    }
 
-              // Optionally, update the file record in the database with the Cloudinary URL
-              prisma.file.update({
-                  where: { id: parseInt(fileId) },
-                  data: { filePath: result.secure_url },
-              }).catch((err) => console.error('Error updating database:', err));
+    // Ensure the file path exists on your server
+    if (!fs.existsSync(file.filePath)) {
+        return res.status(400).send('File path does not exist on the server');
+    }
 
-              res.status(200).send('File uploaded successfully to Cloudinary');
-          }
-      );
+    // Upload the file to Cloudinary
+    cloudinary.uploader.upload(
+        file.filePath,
+        { folder: 'your-folder-name' },  // Specify folder in Cloudinary (optional)
+        (error, result) => {
+            if (error) {
+                console.error('Cloudinary upload error:', error);
+                // Render the view with an error message
+                return res.render('view_file_information', {
+                    title: 'View File Info',
+                    currentFolder,
+                    files: getFilesFromFolder,
+                    errors: ['Error: Something went wrong during upload'],
+                    messages: [],
+                });
+            }
+
+            console.log('File uploaded to Cloudinary:', result);
+            req.messages = ['File uploaded successfully'];
+
+            // Optionally update the file record with Cloudinary URL
+            // prisma.file.update({
+            //   where: { id: parseInt(fileId) },
+            //   data: { filePath: result.secure_url },
+            // });
+
+            // Render the view with a success message
+            res.render('view_file_information', {
+                title: 'View File Info',
+                currentFolder,
+                files: getFilesFromFolder,
+                errors: [],
+                messages: req.messages || [],
+            });
+        }
+    );
   } catch (error) {
-      console.error('Error in POST handler:', error);
-      res.status(500).send('Error uploading the file');
+    console.error('Error in POST handler:', error);
+    res.status(500).send('Error uploading the file');
   }
 };
