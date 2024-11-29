@@ -170,3 +170,8 @@
 
 // the message re-appear once another file has been uploaded 
 
+// **** 
+
+// ensure all files can be uploaded to cloudinary 
+
+// fix the file not found in server error

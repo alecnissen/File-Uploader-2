@@ -211,10 +211,24 @@ exports.view_file_information_post = async (req, res) => {
         return res.status(404).send('File not found');
     }
 
+    console.log('Checking file path:', file.filePath);
+
+    const uploadedFiles = await prisma.file.findMany();
+    console.log('Files from DB:', uploadedFiles);
+
+
+
     // Ensure the file path exists on your server
-    if (!fs.existsSync(file.filePath)) {
-        return res.status(400).send('File path does not exist on the server');
+    // if (!fs.existsSync(file.filePath)) {
+    //     return res.status(400).send('File path does not exist on the server');
+    // }
+
+    const absolutePath = path.resolve(file.filePath);
+    console.log('Resolved file path:', absolutePath);
+    if (!fs.existsSync(absolutePath)) {
+    return res.status(400).send('File path does not exist on the server');
     }
+
 
     // Upload the file to Cloudinary
     cloudinary.uploader.upload(
@@ -237,10 +251,10 @@ exports.view_file_information_post = async (req, res) => {
             req.messages = ['File uploaded successfully'];
 
             // Optionally update the file record with Cloudinary URL
-            // prisma.file.update({
-            //   where: { id: parseInt(fileId) },
-            //   data: { filePath: result.secure_url },
-            // });
+            prisma.file.update({
+              where: { id: parseInt(fileId) },
+              data: { filePath: result.secure_url },
+            });
 
             // Render the view with a success message
             res.render('view_file_information', {
