@@ -5,22 +5,31 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
-    <% if (user) { %>
-      <h1>WELCOME <%= user.username %></h1>
-      <form action="/log_out?_method=DELETE" method="post">
-        <button type="submit">Log out</button>
-      </form>
-     <button> <a href="create_a_file">Create a file</a> </button>
-     <button> <a href="create_a_folder">Create a folder</a> </button>
+    
+    <div class="homepage-container-styles">
+      <h1 class="file-uploader-header-text">FileUploader</h1>
+
+   <% if (!user) { %>
+      <h1 class="log-in-get-started-text">Log in to get started</h1>
+      <button class="login-text-homepage-styles"> <a href="login">Login</a> </button> 
+      <button class="create-user-text-homepage-styles"> <a href="create_user">Create User</a> </button> 
     <% } %>
 
-   <button> <a href="login">Login</a> </button> 
-  <button> <a href="create_user">Create User</a> </button> 
-  <button> <a href="view_folders">View Folders</a> </button>
+    <% if (user) { %>
+      <h1 class="user-header-styles">WELCOME <%= user.username %></h1>
+      <form action="/log_out?_method=DELETE" method="post">
+        <button type="submit" class="user-login-buttons-styles">Log out</button>
+      </form>
+     <button class="user-login-buttons-styles"> <a href="create_a_file">Create a file</a> </button>
+     <button class="user-login-buttons-styles"> <a href="create_a_folder">Create a folder</a> </button>
+     <button class="user-login-buttons-styles"> <a href="view_folders">View Folders</a> </button>
+    <% } %>
 
 
-  </body>
+  </div>
+
+  
+  
+</body>
 </html>

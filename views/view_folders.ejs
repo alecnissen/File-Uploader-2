@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
 <body>
@@ -11,8 +12,9 @@
 
     <ul>
         <% displayAllFolders.forEach(function(folder) { %>
+          <div class="folder-container-styles">
           <a href="/view_file_information/<%=folder.id %>"><%= folder.name %></a>
-
+        </div>
           <!-- <a href="/files_in_folder/<%= folder.id %>"><%= folder.name %></a> -->
 
           

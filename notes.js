@@ -237,3 +237,12 @@
 // big goal is making sure user can upload or create different folders and files 
 
 // and the success message goes away, unique for each upload which improves UX.
+
+// make a better UI for file uploader
+ 
+// organize header and buttons, font color, size 
+
+
+// first put some more space between the buttons when the user logs in 
+
+// then make each folder and file, a box or card
