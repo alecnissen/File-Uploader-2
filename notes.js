@@ -225,3 +225,15 @@
 // working in the upload a file folder, and view folders controllers, 
 
 // working on the displayAllFolders variable within the controller (upload a file) and view folders
+
+
+
+// *** 
+
+// begin to think of UX, 
+
+// add a back button on file info page first 
+
+// big goal is making sure user can upload or create different folders and files 
+
+// and the success message goes away, unique for each upload which improves UX.

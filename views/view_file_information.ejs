@@ -31,19 +31,6 @@
                 <li>File Size: <%=file.size %></li>
                 
                <button><a href="/download_file/<%=file.id %>" download>Download</a></button>
-
-               <!-- <button><a href="/view_file_information/<%= currentFolder.id %>/<%= file.id %>">Upload File</a></button> -->
-
-
-               <!-- <form action="/view_file_information/<%= currentFolder.id %>" method="POST" enctype="multipart/form-data">
-                <label for="file">Upload File:</label>
-                <input type="file" name="file" id="file" required>
-                <button type="submit">Upload File</button>
-                </form> -->
-
-                <!-- <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
-                    <button type="submit">Upload This File</button>
-                </form> -->
                 
                 
             
@@ -72,7 +59,7 @@
     <% } %>
 
 
-  
+  <a href="/view_folders">Back</a>
   
 
 </body>
