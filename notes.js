@@ -175,3 +175,53 @@
 // ensure all files can be uploaded to cloudinary 
 
 // fix the file not found in server error
+// *** ERROR FIXED 
+
+
+// now figure out the 2nd part of the step 
+
+
+
+// Finally, add logic to upload files. You could store it in a database, 
+// but it’s advised to use a cloud storage service for this usecase. 
+// You can use Cloudinary or Supabase storage. When a file is uploaded, save the file URL in the database.
+
+
+// **** 
+
+
+// folders should only be accessible to the users who created them.
+
+// so when trying to think through that, I think it comes down to the schema, that when the user logs in, that folder and the files in them is only accessible to them 
+
+// so I think I need to connect the two tables in the schema, connect the folder 
+
+
+// so right now I am trying to connect the tables together, and test if it is working, to ensure that the folders are associated with a certain user only, 
+
+// folders should be unique to the user 
+
+// to test and work from there, I can try to see if the folders are associated with a certain user 
+
+// console log the user first and make sure it appears in the get controller and post
+
+
+
+// how can I access the req object which contains information about the user ??? 
+
+// ok we got the user req object, 
+
+// I need to see next that we can access and see the users folders 
+
+
+// access the folders associated with the user in the view folders view template
+
+//          **** 
+
+// partially working!!! when I create a new folder, al the other folders appear again, why? 
+
+// Why when I upload a file into a folder, all folders display again??? 
+
+// working in the upload a file folder, and view folders controllers, 
+
+// working on the displayAllFolders variable within the controller (upload a file) and view folders

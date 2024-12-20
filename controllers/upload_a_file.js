@@ -3,7 +3,14 @@ const prisma = new PrismaClient();
 
 exports.upload_file_get = async (req, res, next) => {
 
-    const displayAllFolders = await prisma.folder.findMany();
+    // OG
+    // const displayAllFolders = await prisma.folder.findMany();
+
+    const displayAllFolders = await prisma.folder.findMany({
+        where: {
+          userId: req.user.id
+        }
+      });
    
     res.render('view_folders', { title: 'Create File', errors: [], messages: [], displayAllFolders });
 };
@@ -21,7 +28,15 @@ const fileFilter = (req, file, cb) => {
 
 
   exports.upload_file_post = async (req, res, next) => {
-    const displayAllFolders = await prisma.folder.findMany();
+    // OG 
+    // const displayAllFolders = await prisma.folder.findMany();
+
+    const displayAllFolders = await prisma.folder.findMany({
+        where: {
+          userId: req.user.id
+        }
+      });
+      
     const folderId = req.params.id;
 
     try {
