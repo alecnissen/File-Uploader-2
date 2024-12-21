@@ -245,4 +245,13 @@
 
 // first put some more space between the buttons when the user logs in 
 
-// then make each folder and file, a box or card
+// then make each folder and file, a box or card 
+
+
+// <!-- <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
+// <button class="view-folders-buttons-styles"><a>Delete</a></button>
+// </form> -->
+
+// <!-- <form action="/delete_file/<%= file.id %>?_method=DELETE" method="post">
+//   <button type="submit">Delete This File</button>
+// </form> -->

@@ -37,6 +37,10 @@
                 <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
                     <button type="submit">Upload This File</button>
                 </form>
+
+                 <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
+                     <button type="submit">Delete This File</button>
+                   </form>
                 
                 
             
