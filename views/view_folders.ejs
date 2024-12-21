@@ -6,14 +6,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
-<body>
+<body class="view-all-folders-body-styles">
     
-    <h1>View all folders</h1>
+    <h1 class="view-all-folders-header-text-styles">View all folders</h1>
 
-    <ul>
+    <!-- <ul> -->
+      <div class="folders-wrapper">
         <% displayAllFolders.forEach(function(folder) { %>
           <div class="folder-container-styles">
-          <a href="/view_file_information/<%=folder.id %>"><%= folder.name %></a>
+          <div class="folder-styles">
+          <a href="/view_file_information/<%=folder.id %>" class="folder-name-header-styles"><%= folder.name %></a>
         </div>
           <!-- <a href="/files_in_folder/<%= folder.id %>"><%= folder.name %></a> -->
 
@@ -21,20 +23,24 @@
 
 
           <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
-          <button><a>Delete</a></button>
+          <button class="view-folders-buttons-styles"><a>Delete</a></button>
           </form>
 
           <form method="get" action="/update_folder/<%= folder.id %>">
-          <button>Edit</button>
+          <button class="view-folders-buttons-styles">Edit</button>
           </form>
         
-        <form action="/view_folders/<%= folder.id %>" method="post" enctype="multipart/form-data">
-          <input type="file" name="file"> 
-          <button type="submit">Upload a file</button>
+        <form action="/view_folders/<%= folder.id %>" method="post" enctype="multipart/form-data" class="upload-file-container">
+          <input type="file" name="file" class="view-folders-buttons-styles"> 
+          <button type="submit" class="view-folders-buttons-styles">Upload a file</button>
         </form>
 
+      </div>
+
+
         <% }) %>
-      </ul>
+      </div>
+      
 
       <% if (errors && errors.length > 0) { %>
         <ul>
@@ -51,9 +57,9 @@
       <% } %>
       
       
-
+      <button class="back-to-home-button-styles"> 
       <a href="/">Back to home</a>
-      
+    </button>
 
 </body>
 </html>

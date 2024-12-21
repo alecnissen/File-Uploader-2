@@ -79,16 +79,66 @@ body label {
 
 
 
+
 /* folder styles */ 
 
-.folder-container-styles { 
-  width: 5rem;
-  height: 5rem;
+.view-all-folders-body-styles { 
+  font-family: 'Times New Roman', Times, serif;
+}
+.view-all-folders-header-text-styles { 
   text-align: center;
-  background-color: tan;
+  color: white;
+  font-weight: bold;
+  font-size: 2.2rem;
 }
 
-.folder-container-styles a { 
+.folder-styles { 
+  display: flex;
+  flex-direction: column;
+  width: 7rem;
+  height: 5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.folder-styles a,
+.view-folders-buttons-styles a { 
   text-decoration: none;
   color: black;
+  /* font-size: 1.4rem; */
 }
+
+.folder-name-header-styles { 
+  font-size: 1.3rem;
+}
+
+.view-folders-buttons-styles { 
+  /* font-size: 1rem;
+  padding: 0.2rem; */
+    color: black;
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border: none;
+}
+
+
+.folders-wrapper { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.folder-container-styles { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: tan;
+  padding: 1rem;
+}
+
