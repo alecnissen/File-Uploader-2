@@ -255,3 +255,15 @@
 // <!-- <form action="/delete_file/<%= file.id %>?_method=DELETE" method="post">
 //   <button type="submit">Delete This File</button>
 // </form> -->
+
+
+// ******************** 
+
+
+// next I want to ensure that the success messages disappear after a certain amount of time 
+
+// user will create a folder, and then the success message will disappear after 5 seconds or so 
+
+// that way the user can see the success message, but it will not be there forever and it will ensure that folder creation is unique 
+
+// will need to implement the same for error messages 

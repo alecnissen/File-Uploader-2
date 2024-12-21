@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Create a folder</title>
 </head>
 <body>
     
@@ -20,10 +21,22 @@
     <a href="/">Back to home</a>
       
       <% if (messages && messages.length > 0) { %>
-        <ul>
+        <ul id="message-styles">
           <li><%= messages[0] %></li>
         </ul>
+        
       <% } %>
+
+      <script> 
+
+        const messageStyles = document.getElementById('message-styles');
+        if (messageStyles) {
+          setTimeout(() => {
+            messageStyles.style.display = 'none';
+          }, 3000);
+        }
+
+      </script>
 
 
 

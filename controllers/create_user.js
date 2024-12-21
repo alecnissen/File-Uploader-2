@@ -6,7 +6,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 exports.create_user_get = (req, res, next) => {
-  res.render('create_user', { title: 'Create User', errors: [] });
+  res.render('create_user', { title: 'Create User', errors: [], messages: [] });
 };
 
 exports.create_user_post = [
