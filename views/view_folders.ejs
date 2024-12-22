@@ -10,14 +10,13 @@
     
     <h1 class="view-all-folders-header-text-styles">View all folders</h1>
 
-    <!-- <ul> -->
       <div class="folders-wrapper">
         <% displayAllFolders.forEach(function(folder) { %>
           <div class="folder-container-styles">
           <div class="folder-styles">
           <a href="/view_file_information/<%=folder.id %>" class="folder-name-header-styles"><%= folder.name %></a>
         </div>
-          <!-- <a href="/files_in_folder/<%= folder.id %>"><%= folder.name %></a> -->
+          
 
 
           <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
@@ -41,23 +40,39 @@
       
 
       <% if (errors && errors.length > 0) { %>
-        <ul>
+        
           <% errors.forEach(function(error) { %>
-            <li><%= error %></li>
+            <div id="message-styles"><%= error %></div>
           <% }); %>
-        </ul>
+        
       <% } %>
       
       <% if (messages && messages.length > 0) { %>
-        <ul>
-          <li><%= messages[0] %></li>
-        </ul>
+        
+          <div id="message-styles"><%= messages[0] %></div>
+        
       <% } %>
+      
+    <br>
+    
       
       
       <button class="back-to-home-button-styles"> 
       <a href="/">Back to home</a>
     </button>
+
+
+
+    <script> 
+
+      const messageStyles = document.getElementById('message-styles');
+      if (messageStyles) {
+        setTimeout(() => {
+          messageStyles.style.display = 'none';
+        }, 3000);
+      }
+
+    </script>
 
 </body>
 </html>

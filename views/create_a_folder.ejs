@@ -6,19 +6,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Create a folder</title>
 </head>
-<body>
+<body class="create-folder-body-styles">
     
-    <h1>Create a folder</h1>
+    <h1 class="create-folder-header-styles">Create a folder</h1>
 
-    <form method="post" action="/create_a_folder">
+    <form method="post" action="/create_a_folder" class="name-folder-styles">
         <label>Name your folder</label>
         <input type="text" name="folderName" />
-        <button type="submit">Submit</button>
+        <button type="submit" class="name-folder-btn-styles">Submit</button>
     </form>
 
+    <br>
 
-
+    <button class="create-folder-back-to-home-button-styles">
     <a href="/">Back to home</a>
+    </button>
       
       <% if (messages && messages.length > 0) { %>
         <ul id="message-styles">

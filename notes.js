@@ -269,3 +269,9 @@
 // will need to implement the same for error messages 
 
 // 
+
+// make sure success and error messages appear white 
+
+// make sure to apply same logic using settimeout for error messages 
+
+// view folders upload file and view file to upload file into cloud
