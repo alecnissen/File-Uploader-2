@@ -47,6 +47,7 @@ exports.create_user_post = [
         res.render("create_user", { 
             title: "Create User",
             errors: [{ msg: "Username is already taken"}],
+            messages: []
         });
         return;
       }
@@ -60,7 +61,15 @@ exports.create_user_post = [
         }
       });
 
-      res.redirect("/");
+      res.render("create_user", { 
+        title: "Create User",
+        messages: [{ msg: "User created successfully"}],
+        errors: [],
+      });
+
+      // res.redirect("/");
+
+      // res.redirect("/create_user");
 
       console.log('User created', user);
 

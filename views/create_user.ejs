@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Create A User</title>
 </head>
-<body>
+<body class="create-a-user-body-styles">
     
-    <h1>Create A User</h1>
+    <h1 class="create-user-header-text">Create A User</h1>
 
     <form method="post" action="/create_user" id="user-login-form">
         <label>Username</label>
@@ -20,18 +21,37 @@
         <button type="submit">Submit</button>
         
         <% if (errors && errors.length > 0) { %>
-            <ul>
+            <ul id="message-styles">
               <% errors.forEach(function(error) { %>
                 <li><%= error.msg %></li>
               <% }); %>
             </ul>
           <% } %>
 
+          <% if (messages && messages.length > 0) { %>
+            <ul id="message-styles">
+              <% messages.forEach(function(message) { %>
+                <li><%= message.msg %></li>
+              <% }); %>
+            </ul>
+          <% } %>
 
+          <script> 
+
+            const messageStyles = document.getElementById('message-styles');
+            if (messageStyles) {
+              setTimeout(() => {
+                messageStyles.style.display = 'none';
+              }, 3000);
+            }
+    
+          </script>
         
 
 
     </form>
+
+    <br>
 
     <a href="/">Back to home</a>
 

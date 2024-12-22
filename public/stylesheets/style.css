@@ -21,9 +21,11 @@ a {
 }
 
 .log-in-get-started-text, 
-.login-header-text { 
+.login-header-text,
+.create-user-header-text { 
   color: white;
   font-size: 2rem;
+  text-align: center;
   
 }
 
@@ -140,5 +142,12 @@ body label {
   gap: 1rem;
   background-color: tan;
   padding: 1rem;
+}
+
+
+/* create user styles */
+
+.create-a-user-body-styles { 
+  text-align: center;
 }
 
