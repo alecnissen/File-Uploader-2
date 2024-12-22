@@ -51,7 +51,9 @@ a {
 
 .login-text-homepage-styles a, 
 .create-user-text-homepage-styles a,
-.user-login-buttons-styles a { 
+.user-login-buttons-styles a,
+.login-back-to-home-btn a,
+.create-user-back-to-home-button-styles a { 
   color: inherit;
   text-decoration: none;
 }
