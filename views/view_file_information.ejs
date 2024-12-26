@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
-<body>
-    <h1>File information</h1>
+<body class="file-info-body-wrapper">
 
 
-    <% if (messages && messages.length > 0) { %>
+    <h1 class="file-information-header">File Information</h1>
+
+    <button class="view-file-back-btn"> 
+      <a href="/view_folders">Back</a>
+      </button>
+
+
+    <!-- <% if (messages && messages.length > 0) { %>
         <div class="alert alert-success">
           <%= messages[0] %>
         </div>
@@ -19,35 +26,65 @@
         <div class="alert alert-danger">
           <%= errors[0] %>
         </div>
-      <% } %>
+      <% } %> -->
 
-    <%= currentFolder.name %>
+        <div class="files-wrapper-styles">
+
+      
+     Folder Name: <%= currentFolder.name %> 
 
     <% if (files && files.length > 0) { %>
-        <ul>
-            <% files.forEach((file) => { %>
-                <li>File Name: <%=file.fileName %></li>
-                <li>Created At: <%=file.createdAt %></li>
-                <li>File Size: <%=file.size %></li>
+      <% files.forEach((file) => { %>
+        <div class="file-container-styles">
+                <div>File Name: <%=file.fileName %></div>
+                <br>
+                <div>Created At: <%=file.createdAt %></div>
+                <br>
+                <div>File Size: <%=file.size %></div>
+
+                <br>
                 
-               <button><a href="/download_file/<%=file.id %>" download>Download</a></button>
+               <button class="download-file-styles"><a href="/download_file/<%=file.id %>" download>Download</a></button>
                 
-                
+                <br>
+                <br>
             
                 <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
                     <button type="submit">Upload This File</button>
                 </form>
 
+                <br>
+
                  <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
                      <button type="submit">Delete This File</button>
                    </form>
-                
-                
-            
-               
+                   
+                   <% if (messages && messages[file.id] && messages[file.id].length > 0) { %>
+                    <div id="message-styles">
+                      <%= messages[file.id][0] %>
+                    </div>
+                  <% } %>
+                  
+                  <% if (errors && errors[file.id] && errors[file.id].length > 0) { %>
+                    <div id="message-styles">
+                      <%= errors[file.id][0] %>
+                    </div>
+                  <% } %>
 
-            <% }) %>
-        </ul>
+
+                   
+                   
+                  </div>
+                   
+                   <% }) %>
+                   
+      
+
+
+    </div>
+
+
+
 
         <% if (errors && errors.length > 0) { %>
             <ul>
@@ -62,8 +99,19 @@
         <p>No files found for this folder</p>
     <% } %>
 
+    <br>
+    
+    <script> 
 
-  <a href="/view_folders">Back</a>
+      const messageStyles = document.getElementById('message-styles');
+      if (messageStyles) {
+        setTimeout(() => {
+          messageStyles.style.display = 'none';
+        }, 3000);
+      }
+
+    </script>
+ 
   
 
 </body>

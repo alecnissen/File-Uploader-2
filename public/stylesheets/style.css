@@ -56,7 +56,9 @@ a {
 .login-back-to-home-btn a,
 .create-user-back-to-home-button-styles a,
 .create-folder-back-to-home-button-styles a,
-.back-to-home-button-styles a { 
+.back-to-home-button-styles a,
+.download-file-styles a,
+.view-file-back-btn a { 
   color: inherit;
   text-decoration: none;
 }
@@ -141,7 +143,8 @@ body label {
   align-items: center;
 }
 
-.folder-container-styles { 
+.folder-container-styles,
+.files-wrapper-styles { 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,6 +152,7 @@ body label {
   gap: 1rem;
   background-color: tan;
   padding: 1rem;
+  text-align: center;
 }
 
 
@@ -180,4 +184,24 @@ body label {
 #message-styles { 
   color: white;
   font-weight: bold;
+}
+
+
+/*  */    
+
+.file-container-styles { 
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.file-information-header { 
+  text-align: center;
+  color: white;
+}
+
+.file-info-body-wrapper { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

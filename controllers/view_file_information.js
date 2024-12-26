@@ -53,8 +53,8 @@ exports.view_file_information_get = async (req, res, next) => {
     title: 'View File Info',
     currentFolder,
     files: getFilesFromFolder,
-    errors: [],
-    messages: [],
+    errors: {},
+    messages: {},
     user: req.user
   });
 };
@@ -110,17 +110,21 @@ exports.view_file_information_post = async (req, res) => {
         if (error) {
           console.error('Cloudinary upload error:', error);
           // Render the view with an error message
+          const errors = {};
+          errors[fileId] = ['Error: Something went wrong during upload'];
           return res.render('view_file_information', {
             title: 'View File Info',
             currentFolder,
             files: getFilesFromFolder,
-            errors: ['Error: Something went wrong during upload'],
-            messages: []
+            errors,
+            messages: {}
           });
         }
 
         console.log('File uploaded to Cloudinary:', result);
-        req.messages = ['File uploaded successfully'];
+        const messages = {};
+        messages[fileId] = ['File uploaded successfully'];
+        // req.messages = ['File uploaded successfully'];
 
         // Optionally update the file record with Cloudinary URL
         prisma.file.update({
@@ -133,8 +137,8 @@ exports.view_file_information_post = async (req, res) => {
           title: 'View File Info',
           currentFolder,
           files: getFilesFromFolder,
-          errors: [],
-          messages: req.messages || []
+          errors: {},
+          messages
         });
       }
     );

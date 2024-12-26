@@ -20,32 +20,9 @@
         
         <button type="submit">Submit</button>
         
-        <% if (errors && errors.length > 0) { %>
-            <ul id="message-styles">
-              <% errors.forEach(function(error) { %>
-                <li><%= error.msg %></li>
-              <% }); %>
-            </ul>
-          <% } %>
+     
 
-          <% if (messages && messages.length > 0) { %>
-            <ul id="message-styles">
-              <% messages.forEach(function(message) { %>
-                <li><%= message.msg %></li>
-              <% }); %>
-            </ul>
-          <% } %>
-
-          <script> 
-
-            const messageStyles = document.getElementById('message-styles');
-            if (messageStyles) {
-              setTimeout(() => {
-                messageStyles.style.display = 'none';
-              }, 3000);
-            }
-    
-          </script>
+          
         
 
 
@@ -56,6 +33,33 @@
     <button class="create-user-back-to-home-button-styles">
     <a href="/">Back to home</a>
     </button>
+
+    <% if (errors && errors.length > 0) { %>
+      <% errors.forEach(function(error) { %>
+        <div id="message-styles"><%= error.msg %></div>
+      <% }); %>
+  <% } %>
+
+  <% if (messages && messages.length > 0) { %>
+      <% messages.forEach(function(message) { %>
+        <div id="message-styles"><%= message.msg %></div>
+      <% }); %>
+  <% } %>
+
+
+
+  <script> 
+
+    const messageStyles = document.getElementById('message-styles');
+    if (messageStyles) {
+      setTimeout(() => {
+        messageStyles.style.display = 'none';
+      }, 3000);
+    }
+
+  </script>
+
+
 
 </body>
 </html>

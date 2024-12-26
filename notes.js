@@ -275,3 +275,10 @@
 // make sure to apply same logic using settimeout for error messages 
 
 // view folders upload file and view file to upload file into cloud
+
+//
+
+
+// make the error messages appear below the specific file
+
+// 

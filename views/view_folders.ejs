@@ -10,6 +10,28 @@
     
     <h1 class="view-all-folders-header-text-styles">View all folders</h1>
 
+    <% if (errors && errors.length > 0) { %>
+        
+      <% errors.forEach(function(error) { %>
+        <div id="message-styles"><%= error %></div>
+      <% }); %>
+    
+  <% } %>
+  
+  <% if (messages && messages.length > 0) { %>
+    
+      <div id="message-styles"><%= messages[0] %></div>
+    
+  <% } %>
+  
+<br>
+
+  
+  
+  <button class="back-to-home-button-styles"> 
+  <a href="/">Back to home</a>
+</button>
+
       <div class="folders-wrapper">
         <% displayAllFolders.forEach(function(folder) { %>
           <div class="folder-container-styles">
@@ -39,27 +61,7 @@
       </div>
       
 
-      <% if (errors && errors.length > 0) { %>
-        
-          <% errors.forEach(function(error) { %>
-            <div id="message-styles"><%= error %></div>
-          <% }); %>
-        
-      <% } %>
-      
-      <% if (messages && messages.length > 0) { %>
-        
-          <div id="message-styles"><%= messages[0] %></div>
-        
-      <% } %>
-      
-    <br>
     
-      
-      
-      <button class="back-to-home-button-styles"> 
-      <a href="/">Back to home</a>
-    </button>
 
 
 
