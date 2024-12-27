@@ -10,7 +10,7 @@
     
     <h1 class="view-all-folders-header-text-styles">View all folders</h1>
 
-    <% if (errors && errors.length > 0) { %>
+    <!-- <% if (errors && errors.length > 0) { %>
         
       <% errors.forEach(function(error) { %>
         <div id="message-styles"><%= error %></div>
@@ -24,7 +24,7 @@
     
   <% } %>
   
-<br>
+<br> -->
 
   
   
@@ -54,7 +54,24 @@
           <button type="submit" class="view-folders-buttons-styles">Upload a file</button>
         </form>
 
+        <% if (messages && messages[folder.id] && messages[folder.id].length > 0) { %>
+          <div id="message-styles">
+            <%= messages[folder.id][0] %>
+          </div>
+        <% } %>
+        
+        <% if (errors && errors[folder.id] && errors[folder.id].length > 0) { %>
+          <div id="message-styles">
+            <%= errors[folder.id][0] %>
+          </div>
+        <% } %>      
+
+        
       </div>
+
+
+
+
 
 
         <% }) %>

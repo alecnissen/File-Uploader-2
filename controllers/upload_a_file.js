@@ -11,8 +11,14 @@ exports.upload_file_get = async (req, res, next) => {
           userId: req.user.id
         }
       });
+
+      const displayOneFolder = await prisma.folder.findUnique({
+        where: {
+          id: Number(req.params.id)
+        }
+      })
    
-    res.render('view_folders', { title: 'Create File', errors: [], messages: [], displayAllFolders });
+    res.render('view_folders', { title: 'Create File', errors: {}, messages: {}, displayAllFolders, displayOneFolder });
 };
 
 const fileFilter = (req, file, cb) => {
@@ -41,8 +47,10 @@ const fileFilter = (req, file, cb) => {
 
     try {
         if (!req.file) {
-            const errorMsg = 'Error: No file or invalid file type';
-            return res.render('view_folders', { title: 'Create File', errors: [errorMsg], messages: [], displayAllFolders });
+            // const errorMsg = 'Error: No file or invalid file type';
+            const errors = {};
+            errors[folderId] = ['Error: No file or invalid file type'];
+            return res.render('view_folders', { title: 'Create File', errors, messages: [], displayAllFolders });
         }
 
         // Check if the folder exists
@@ -60,20 +68,25 @@ const fileFilter = (req, file, cb) => {
                 },
             });
 
-            console.log('File uploaded successfully');
-            req.message = 'File uploaded successfully';
+            // console.log('File uploaded successfully');
+            // req.message = 'File uploaded successfully';
+            const messages = {};
+            messages[folderId] = ['File uploaded successfully'];
+            return res.render('view_folders', { title: 'Create File', messages, errors: {}, displayAllFolders });
         } else {
-            const errorMsg = 'Error: Folder not found';
-            return res.render('view_folders', { title: 'Create File', errors: [errorMsg], messages: [], displayAllFolders });
+            // const errorMsg = 'Error: Folder not found';
+            const errors = {};
+            errors[folderId] = ['Error: Folder not found'];
+            return res.render('view_folders', { title: 'Create File', errors, messages: {}, displayAllFolders });
         }
     } catch (err) {
         console.log(err);
         const errorMsg = 'Error: Something went wrong';
-        return res.render('view_folders', { title: 'Create File', errors: [errorMsg], messages: [], displayAllFolders });
+        return res.render('view_folders', { title: 'Create File', errors, messages, displayAllFolders });
     }
 
     // Render the view after successful upload
-    res.render('view_folders', { title: 'Create File', messages: [req.message], errors: [], displayAllFolders });
+    res.render('view_folders', { title: 'Create File', messages: {}, errors: {}, displayAllFolders });
 };
 
 
