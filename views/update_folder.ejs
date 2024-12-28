@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Update Folder</title>
 </head>
-<body>
+<body class="update-folder-body-styles">
     
-    <h1>Update folder</h1>
+    <h1 class="update-folder-header-text">Update Folder</h1>
 
-    <p>Folder ID: <%= folder.id %></p> <!-- Debug -->
-    <form method="post" action="/update_folder/<%= folder.id %>">
-    <label>Change folder name</label>
+    
+    <form method="post" action="/update_folder/<%= folder.id %>" class="update-folder-form-styles">
+    <label>Change Folder Name</label>
     <input type="text" name="folderName" value="<%= folder.name %>" />
-    <button type="submit">Submit</button>
+    <br>
+    <button type="submit" class="update-folder-btn-styles">Submit</button>
     </form>
 
 
-
+    <br>
 
     <% if (errors && errors.length > 0) { %>
         <ul>
@@ -26,6 +28,18 @@
           <% }); %>
         </ul>
       <% } %>
+
+      <button class="update-folder-btn-styles"> 
+        <a href="/">Back To Home</a>
+      </button>
+
+      <br>
+
+      <button class="update-folder-btn-styles"> 
+        <a href="/view_folders">Back To Folders</a>
+        </button>
+
+
 
       
 

@@ -101,7 +101,8 @@ body label {
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
-.view-all-folders-header-text-styles { 
+.view-all-folders-header-text-styles,
+.update-folder-header-text { 
   text-align: center;
   color: white;
   font-weight: bold;
@@ -118,7 +119,8 @@ body label {
 }
 
 .folder-styles a,
-.view-folders-buttons-styles a { 
+.view-folders-buttons-styles a,
+.update-folder-btn-styles a { 
   color: black;
   text-decoration: none;
 }
@@ -127,7 +129,10 @@ body label {
   font-size: 1.5rem;
 }
 
-.view-folders-buttons-styles { 
+.view-folders-buttons-styles,
+.update-folder-btn-styles,
+.name-folder-btn-styles,
+.create-folder-back-to-home-button-styles { 
   /* font-size: 1rem;
   padding: 0.2rem; */
     color: black;
@@ -223,3 +228,11 @@ body label {
   cursor: pointer;
 }
 
+.update-folder-body-styles,
+.update-folder-form-styles { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

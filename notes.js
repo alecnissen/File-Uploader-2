@@ -297,3 +297,7 @@
 // make sure each button has cursor pointer 
 
 // increase the size of the fonts
+
+// *** 
+
+// finish styling for the update folder page 
