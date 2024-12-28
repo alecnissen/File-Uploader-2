@@ -12,9 +12,6 @@ exports.view_file_information_get = async (req, res, next) => {
 
   console.log('view_file_information_get function called'); 
 
-
-  console.log('LOGGING THE USER NIGGA', req.user.folders);
-
   console.log('Requested folder ID:', req.params.id);
 
   console.log('Request params:', req.params);

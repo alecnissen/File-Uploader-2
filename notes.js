@@ -289,3 +289,5 @@
 // now make sure that the folders show success or error messages in that specific folder! 
 
 // the messages or errors will show in that specific folder in which the file was uploaded into
+
+// how to make sure page does not bounce back up 
