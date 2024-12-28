@@ -291,3 +291,9 @@
 // the messages or errors will show in that specific folder in which the file was uploaded into
 
 // how to make sure page does not bounce back up 
+
+// *** 
+
+// make sure each button has cursor pointer 
+
+// increase the size of the fonts

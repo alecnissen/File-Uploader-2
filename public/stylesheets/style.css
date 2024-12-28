@@ -1,3 +1,7 @@
+* { 
+  font-family:'Courier New', Courier, monospace;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -48,6 +52,7 @@ a {
   border-radius: 1rem;
   padding: 0.5rem;
   border: none;
+  cursor: pointer;
 }
 
 .login-text-homepage-styles a, 
@@ -100,7 +105,7 @@ body label {
   text-align: center;
   color: white;
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 
 .folder-styles { 
@@ -109,18 +114,17 @@ body label {
   width: 7rem;
   height: 5rem;
   text-align: center;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .folder-styles a,
 .view-folders-buttons-styles a { 
-  text-decoration: none;
   color: black;
-  /* font-size: 1.4rem; */
+  text-decoration: none;
 }
 
 .folder-name-header-styles { 
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .view-folders-buttons-styles { 
@@ -153,6 +157,7 @@ body label {
   background-color: tan;
   padding: 1rem;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 
@@ -197,6 +202,7 @@ body label {
 .file-information-header { 
   text-align: center;
   color: white;
+  font-size: 2.4rem;
 }
 
 .file-info-body-wrapper { 
@@ -205,3 +211,15 @@ body label {
   justify-content: center;
   align-items: center;
 }
+
+.file-info-body-wrapper button, 
+.view-all-folders-body-styles button,
+.homepage-container-style button { 
+  color: black;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
