@@ -120,7 +120,8 @@ body label {
 
 .folder-styles a,
 .view-folders-buttons-styles a,
-.update-folder-btn-styles a { 
+.update-folder-btn-styles a,
+.login-back-to-home-btn a { 
   color: black;
   text-decoration: none;
 }
@@ -132,7 +133,11 @@ body label {
 .view-folders-buttons-styles,
 .update-folder-btn-styles,
 .name-folder-btn-styles,
-.create-folder-back-to-home-button-styles { 
+.create-folder-back-to-home-button-styles,
+.login-back-to-home-btn,
+.user-login-submit-btn,
+#user-login-form button,
+.create-user-back-to-home-button-styles  { 
   /* font-size: 1rem;
   padding: 0.2rem; */
     color: black;
@@ -236,3 +241,13 @@ body label {
   align-items: center;
   text-align: center;
 }
+
+.name-folder-styles input,
+.update-folder-form-styles input,
+.name-folder-styles label,
+.update-folder-form-styles label,
+#user-login-form input,
+#user-login-form label { 
+  font-size: 1.2rem;
+}
+
