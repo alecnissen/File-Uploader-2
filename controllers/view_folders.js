@@ -1,28 +1,23 @@
-const { body, validationResult } = require("express-validator");
-const asyncHandler = require("express-async-handler");
+const { body, validationResult } = require('express-validator');
+const asyncHandler = require('express-async-handler');
 
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient(); 
+const prisma = new PrismaClient();
 
-exports.view_folders_get = async (req, res, next) => { 
+exports.view_folders_get = async (req, res, next) => {
+  console.log('logging the user in view folders', req.user);
 
-    // asyncHandler(async (req, res, next) => {
-        
-        // OG
-        // const displayAllFolders = await prisma.folder.findMany();
+  const displayAllFolders = await prisma.folder.findMany({
+    where: {
+      userId: req.user.id
+    }
+  });
 
-        console.log('logging the user in view folders', req.user);
-        
-          
-        const displayAllFolders = await prisma.folder.findMany({
-            where: {
-              userId: req.user.id
-            }
-          });
-
-        res.render('view_folders', { title: 'View Folders', errors: [], messages: [], displayAllFolders, user: req.user });
-
-    // }) 
-}
-
-
+  res.render('view_folders', {
+    title: 'View Folders',
+    errors: [],
+    messages: [],
+    displayAllFolders,
+    user: req.user
+  });
+};

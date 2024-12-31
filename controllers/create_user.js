@@ -1,6 +1,6 @@
-const { body, validationResult } = require("express-validator");
-const asyncHandler = require("express-async-handler");
-const bcrypt = require("bcryptjs");
+const { body, validationResult } = require('express-validator');
+const asyncHandler = require('express-async-handler');
+const bcrypt = require('bcryptjs');
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
@@ -10,28 +10,25 @@ exports.create_user_get = (req, res, next) => {
 };
 
 exports.create_user_post = [
-  body("username", "Username must contain at least 3 characters")
-  .trim()
-  .isLength({ min: 3 })
-  .escape(),
-  body("password", "Password must contain at least 3 characters")
-  .trim()
-  .isLength({ min: 3 })
-  .escape(),
-
-
+  body('username', 'Username must contain at least 3 characters')
+    .trim()
+    .isLength({ min: 3 })
+    .escape(),
+  body('password', 'Password must contain at least 3 characters')
+    .trim()
+    .isLength({ min: 3 })
+    .escape(),
 
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
 
-    if (!errors.isEmpty()) { 
-        res.render("create_user", { 
-            title: "Create User", 
-            errors: errors.array(),
-        });
-        return;
+    if (!errors.isEmpty()) {
+      res.render('create_user', {
+        title: 'Create User',
+        errors: errors.array()
+      });
+      return;
     }
-
 
     try {
       console.log('Request body:', req.body);
@@ -42,16 +39,14 @@ exports.create_user_post = [
       });
 
       if (checkUser) {
-        // if user is found render the create user page again 
-        // also display the error???
-        res.render("create_user", { 
-            title: "Create User",
-            errors: [{ msg: "Username is already taken"}],
-            messages: []
+        res.render('create_user', {
+          title: 'Create User',
+          errors: [{ msg: 'Username Is Already Taken' }],
+          messages: []
         });
         return;
       }
-      console.log('password before hashing',req.body.password);
+      console.log('password before hashing', req.body.password);
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       console.log(hashedPassword);
       const user = await prisma.users.create({
@@ -61,24 +56,14 @@ exports.create_user_post = [
         }
       });
 
-      res.render("create_user", { 
-        title: "Create User",
-        messages: [{ msg: "User created successfully"}],
-        errors: [],
+      res.render('create_user', {
+        title: 'Create User',
+        messages: [{ msg: 'User Created Successfully' }],
+        errors: []
       });
 
-      // res.redirect("/");
-
-      // res.redirect("/create_user");
-
       console.log('User created', user);
-
-      
-
-    } 
-    
-    
-    catch (err) {
+    } catch (err) {
       console.error('Error handling login:', err);
       next(err);
     }

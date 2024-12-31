@@ -301,3 +301,12 @@
 // *** 
 
 // finish styling for the update folder page 
+
+
+// *** 
+
+// REMOVE ALL COMMENTED OUT CODE AND FORMAT ALL PAGES BEFORE HOSTING!
+
+// do I need to use an .env to hide my cloud name??? 
+
+// upload file to cloud file

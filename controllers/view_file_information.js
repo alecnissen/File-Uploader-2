@@ -5,16 +5,10 @@ const fs = require('fs');
 const path = require('path');
 
 const multer = require('multer');
-const storage = multer.memoryStorage(); // Store file in memory
+const storage = multer.memoryStorage();
 const upload = multer({ storage: storage }).single('file');
 
 exports.view_file_information_get = async (req, res, next) => {
-  console.log('view_file_information_get function called');
-
-  console.log('Requested folder ID:', req.params.id);
-
-  console.log('Request params:', req.params);
-
   const currentFolder = await prisma.folder.findUnique({
     where: {
       id: Number(req.params.id)
