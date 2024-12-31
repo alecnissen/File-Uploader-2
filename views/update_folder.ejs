@@ -10,14 +10,12 @@
     
     <h1 class="update-folder-header-text">Update Folder</h1>
 
-    
     <form method="post" action="/update_folder/<%= folder.id %>" class="update-folder-form-styles">
     <label>Change Folder Name</label>
     <input type="text" name="folderName" value="<%= folder.name %>" />
     <br>
     <button type="submit" class="update-folder-btn-styles">Submit</button>
     </form>
-
 
     <br>
 
@@ -37,8 +35,7 @@
 
       <button class="update-folder-btn-styles"> 
         <a href="/view_folders">Back To Folders</a>
-        </button>
-
+      </button>
 
 </body>
 </html>

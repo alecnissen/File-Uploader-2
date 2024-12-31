@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Document</title>
+    <title>File Information</title>
 </head>
 <body class="file-info-body-wrapper">
-
 
     <h1 class="file-information-header">File Information</h1>
 
@@ -29,13 +28,9 @@
         </div>
     <% } %>
 
+    <div class="files-wrapper-styles">
 
-        <div class="files-wrapper-styles">
-
-      
      Folder Name: <%= currentFolder.name %> 
-
-
 
     <% if (files && files.length > 0) { %>
       <% files.forEach((file) => { %>
@@ -59,23 +54,15 @@
 
                 <br>
 
-                 <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
+                <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
                      <button type="submit">Delete This File</button>
-                   </form>
+                </form>
                    
-
-                 
+                </div>
                    
-                  </div>
+            <% }) %>
                    
-                   <% }) %>
-                   
-      
-
-
     </div>
-
-
 
         <% if (errors && errors.length > 0) { %>
             <ul>
@@ -103,7 +90,5 @@
 
     </script>
  
-  
-
 </body>
 </html>
