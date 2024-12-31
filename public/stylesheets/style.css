@@ -1,52 +1,54 @@
-* { 
-  font-family:'Courier New', Courier, monospace;
+* {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font:
+    14px 'Lucida Grande',
+    Helvetica,
+    Arial,
+    sans-serif;
   background-color: rgb(31, 31, 143);
 }
 
-
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
-.user-header-styles { 
+.user-header-styles {
   color: white;
 }
 
-.homepage-container-styles { 
+.homepage-container-styles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.log-in-get-started-text, 
+.log-in-get-started-text,
 .login-header-text,
 .create-user-header-text,
-.create-folder-header-styles { 
+.create-folder-header-styles {
   color: white;
   font-size: 2rem;
   text-align: center;
-  
 }
 
-.file-uploader-header-text { 
+.file-uploader-header-text {
   color: white;
   font-size: 2.5rem;
 }
 
-.login-text-homepage-styles  {
+.login-text-homepage-styles {
   margin-bottom: 1rem;
 }
 
-.login-text-homepage-styles, 
+.login-text-homepage-styles,
 .create-user-text-homepage-styles,
 .user-login-buttons-styles,
-.user-login-buttons-styles { 
+.user-login-buttons-styles {
   color: black;
   font-size: 1rem;
   border-radius: 1rem;
@@ -55,7 +57,7 @@ a {
   cursor: pointer;
 }
 
-.login-text-homepage-styles a, 
+.login-text-homepage-styles a,
 .create-user-text-homepage-styles a,
 .user-login-buttons-styles a,
 .login-back-to-home-btn a,
@@ -63,23 +65,21 @@ a {
 .create-folder-back-to-home-button-styles a,
 .back-to-home-button-styles a,
 .download-file-styles a,
-.view-file-back-btn a { 
+.view-file-back-btn a {
   color: inherit;
   text-decoration: none;
 }
 
-
-
-body label { 
+body label {
   color: white;
   font-weight: bold;
 }
-.login-page-body-styles { 
+.login-page-body-styles {
   text-align: center;
   background-color: rgb(31, 31, 143);
 }
 
-#user-login-form { 
+#user-login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,45 +88,40 @@ body label {
 
 #user-login-form button,
 .user-login-buttons-styles,
-.name-folder-btn-styles { 
+.name-folder-btn-styles {
   margin-top: 1rem;
 }
 
-
-
-
-/* folder styles */ 
-
-.view-all-folders-body-styles { 
+.view-all-folders-body-styles {
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
+
 .view-all-folders-header-text-styles,
-.update-folder-header-text { 
+.update-folder-header-text {
   text-align: center;
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
 }
 
-.folder-styles { 
+.folder-styles {
   display: flex;
   flex-direction: column;
   width: 7rem;
   height: 5rem;
   text-align: center;
-  /* text-decoration: underline; */
 }
 
 .folder-styles a,
 .view-folders-buttons-styles a,
 .update-folder-btn-styles a,
-.login-back-to-home-btn a { 
+.login-back-to-home-btn a {
   color: black;
   text-decoration: none;
 }
 
-.folder-name-header-styles { 
+.folder-name-header-styles {
   font-size: 1.5rem;
 }
 
@@ -137,18 +132,15 @@ body label {
 .login-back-to-home-btn,
 .user-login-submit-btn,
 #user-login-form button,
-.create-user-back-to-home-button-styles  { 
-  /* font-size: 1rem;
-  padding: 0.2rem; */
-    color: black;
-    font-size: 1rem;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    border: none;
+.create-user-back-to-home-button-styles {
+  color: black;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: none;
 }
 
-
-.folders-wrapper { 
+.folders-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -158,36 +150,27 @@ body label {
 }
 
 .folder-container-styles,
-.files-wrapper-styles { 
+.files-wrapper-styles {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
   background-color: tan;
-  /* padding: 1rem; */
   text-align: center;
   font-size: 1.1rem;
-  
 }
 
-.folder-container-styles { 
+.folder-container-styles {
   width: 23rem;
   height: 26rem;
 }
 
-
-/* create user styles */
-
-.create-a-user-body-styles { 
+.create-a-user-body-styles {
   text-align: center;
 }
 
-
-
-/* create folder styles */ 
-
-.create-folder-body-styles { 
+.create-folder-body-styles {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,42 +178,39 @@ body label {
   text-align: center;
 }
 
-.name-folder-styles { 
+.name-folder-styles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#message-styles { 
+#message-styles {
   color: white;
   font-weight: bold;
 }
 
-
-/*  */    
-
-.file-container-styles { 
+.file-container-styles {
   border: 1px solid black;
   padding: 1rem;
 }
 
-.file-information-header { 
+.file-information-header {
   text-align: center;
   color: white;
   font-size: 2.4rem;
 }
 
-.file-info-body-wrapper { 
+.file-info-body-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.file-info-body-wrapper button, 
+.file-info-body-wrapper button,
 .view-all-folders-body-styles button,
-.homepage-container-style button { 
+.homepage-container-style button {
   color: black;
   font-size: 1rem;
   border-radius: 1rem;
@@ -240,7 +220,7 @@ body label {
 }
 
 .update-folder-body-styles,
-.update-folder-form-styles { 
+.update-folder-form-styles {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -253,11 +233,11 @@ body label {
 .name-folder-styles label,
 .update-folder-form-styles label,
 #user-login-form input,
-#user-login-form label { 
+#user-login-form label {
   font-size: 1.2rem;
 }
 
-.subtitle-text-header { 
+.subtitle-text-header {
   color: white;
   font-family: 'Courier New', Courier, monospace;
 }
