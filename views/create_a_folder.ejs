@@ -11,8 +11,8 @@
     <h1 class="create-folder-header-styles">Create A Folder</h1>
 
     <form method="post" action="/create_a_folder" class="name-folder-styles">
-        <label>Name your folder</label>
-        <input type="text" name="folderName" />
+        <label>Name Your Folder</label>
+        <input type="text" name="folderName" required />
         <button type="submit" class="name-folder-btn-styles">Submit</button>
     </form>
 
@@ -21,11 +21,13 @@
     <button class="create-folder-back-to-home-button-styles">
     <a href="/">Back to home</a>
     </button>
+
+    <br>
       
       <% if (messages && messages.length > 0) { %>
-        <ul id="message-styles">
-          <li><%= messages[0] %></li>
-        </ul>
+        
+          <div id="message-styles"><%= messages[0] %></div>
+        
         
       <% } %>
 

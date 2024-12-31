@@ -9,6 +9,7 @@
     
     <div class="homepage-container-styles">
       <h1 class="file-uploader-header-text">File Uploader</h1>
+      <p class="subtitle-text-header">Create Folders And Upload Files Into The Cloud!!!</p>
 
    <% if (!user) { %>
       <h1 class="log-in-get-started-text">Log In To Get Started</h1>
@@ -21,7 +22,6 @@
       <form action="/log_out?_method=DELETE" method="post">
         <button type="submit" class="user-login-buttons-styles">Log Out</button>
       </form>
-     <button class="user-login-buttons-styles"> <a href="create_a_file">Create A File</a> </button>
      <button class="user-login-buttons-styles"> <a href="create_a_folder">Create A Folder</a> </button>
      <button class="user-login-buttons-styles"> <a href="view_folders">View Folders</a> </button>
     <% } %>

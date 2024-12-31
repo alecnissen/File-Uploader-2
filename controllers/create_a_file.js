@@ -1,10 +1,3 @@
-// const { body, validationResult } = require("express-validator");
-// const asyncHandler = require("express-async-handler");
-// const bcrypt = require("bcryptjs");
-
-// const { PrismaClient } = require('@prisma/client');
-// const prisma = new PrismaClient();
-
 exports.create_file_get = (req, res, next) => {
   res.render('create_a_file', { title: 'Create User', errors: [], messages: [] });
 };
@@ -24,9 +17,8 @@ exports.create_file_post = (req, res, next) => {
     console.log('File created successfully');
     req.message = 'File created successfully';
     res.render('create_a_file', { title: 'Create File', messages: [req.message], errors: [] });
-  } else { 
+  } else {
     const errorMsg = 'Error: No file or invalid file type';
     res.render('create_a_file', { title: 'Create File', errors: [errorMsg], messages: [] });
   }
 };
-
