@@ -1,13 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient(); 
 
-// exports.upload_file_to_cloud_get = async (req, res, next) => {
-   
-//     res.render('view_file_information', { errors: [], messages: [] });
-
-
-// }; 
-
 exports.upload_file_to_cloud_post = async (req, res, next) => { 
 
 

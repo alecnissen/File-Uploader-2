@@ -11,7 +11,7 @@
     <h1 class="login-header-text">Login</h1>
 
     <% if (locals.errorMessage) { %>
-        <p style="color: red;"><%= errorMessage %></p>
+        <p id="message-styles"><%= errorMessage %></p>
       <% } %>
 
     <form method="post" action="/login" id="user-login-form">
@@ -29,6 +29,18 @@
     <button class="login-back-to-home-btn">
     <a href="/">Back to home</a>
     </button>
+
+
+    <script> 
+
+        const messageStyles = document.getElementById('message-styles');
+        if (messageStyles) {
+          setTimeout(() => {
+            messageStyles.style.display = 'none';
+          }, 3000);
+        }
+  
+      </script>
 
 </body>
 </html>
