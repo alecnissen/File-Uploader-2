@@ -25,16 +25,16 @@
         </div>
           
           <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
-          <button class="view-folders-buttons-styles"><a>Delete Folder</a></button>
+          <button class="back-to-home-button-styles"><a>Delete Folder</a></button>
           </form>
 
           <form method="get" action="/update_folder/<%= folder.id %>">
-          <button class="view-folders-buttons-styles">Edit Folder Name</button>
+          <button class="back-to-home-button-styles">Edit Folder Name</button>
           </form>
         
         <form action="/view_folders/<%= folder.id %>" method="post" enctype="multipart/form-data" class="upload-file-container">
           <input type="file" name="file" class="view-folders-buttons-styles"> 
-          <button type="submit" class="view-folders-buttons-styles">Upload File To Folder</button>
+          <button type="submit" class="back-to-home-button-styles">Upload File To Folder</button>
         </form>
 
         <% if (messages && messages[folder.id] && messages[folder.id].length > 0) { %>
@@ -60,7 +60,8 @@
       if (messageStyles) {
         setTimeout(() => {
           messageStyles.style.display = 'none';
-        }, 3000);
+          messageStyles.style.textTransform = 'none';
+        }, 10000);
       }
 
     </script>

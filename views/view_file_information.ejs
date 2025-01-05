@@ -49,13 +49,13 @@
                 <br>
             
                 <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
-                    <button type="submit">Upload File To Your Cloud</button>
+                    <button type="submit" class="upload-file-to-cloud">Upload File To Your Cloud</button>
                 </form>
 
                 <br>
 
                 <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
-                     <button type="submit">Delete File</button>
+                     <button type="submit" class="upload-file-to-cloud">Delete File</button>
                 </form>
                    
                 </div>
