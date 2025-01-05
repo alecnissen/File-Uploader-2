@@ -8,7 +8,9 @@
 </head>
 <body class="view-all-folders-body-styles">
     
-  <h1 class="view-all-folders-header-text-styles">View All Folders</h1>
+  <h1 class="view-all-folders-header-text-styles">Your Folders</h1>
+
+  <p>Click The Folder Name To View The Files In Your Folders</p>
 
   <button class="back-to-home-button-styles"> 
   <a href="/">Back To Home</a>
@@ -18,20 +20,21 @@
         <% displayAllFolders.forEach(function(folder) { %>
           <div class="folder-container-styles">
           <div class="folder-styles">
-          <a href="/view_file_information/<%=folder.id %>" class="folder-name-header-styles"><%= folder.name %></a>
+
+          <a href="/view_file_information/<%=folder.id %>" class="folder-name-header-styles">Folder Name: <%= folder.name %></a>
         </div>
           
           <form action="/delete_folder/<%= folder.id %>?_method=DELETE" method="post">
-          <button class="view-folders-buttons-styles"><a>Delete</a></button>
+          <button class="view-folders-buttons-styles"><a>Delete Folder</a></button>
           </form>
 
           <form method="get" action="/update_folder/<%= folder.id %>">
-          <button class="view-folders-buttons-styles">Edit</button>
+          <button class="view-folders-buttons-styles">Edit Folder Name</button>
           </form>
         
         <form action="/view_folders/<%= folder.id %>" method="post" enctype="multipart/form-data" class="upload-file-container">
           <input type="file" name="file" class="view-folders-buttons-styles"> 
-          <button type="submit" class="view-folders-buttons-styles">Upload A File</button>
+          <button type="submit" class="view-folders-buttons-styles">Upload File To Folder</button>
         </form>
 
         <% if (messages && messages[folder.id] && messages[folder.id].length > 0) { %>

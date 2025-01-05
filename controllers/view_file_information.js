@@ -79,7 +79,7 @@ exports.view_file_information_post = async (req, res) => {
         console.error('Cloudinary upload error:', error);
 
         const errors = {};
-        errors[fileId] = ['Error: Something went wrong during upload'];
+        errors[fileId] = ['Error: Something Went Wrong During Upload'];
         return res.render('view_file_information', {
           title: 'View File Info',
           currentFolder,
@@ -91,7 +91,7 @@ exports.view_file_information_post = async (req, res) => {
 
       console.log('File uploaded to Cloudinary:', result);
       const messages = {};
-      messages[fileId] = ['File uploaded successfully'];
+      messages[fileId] = ['File Uploaded Successfully'];
       prisma.file.update({
         where: { id: parseInt(fileId) },
         data: { filePath: result.secure_url }
@@ -107,6 +107,6 @@ exports.view_file_information_post = async (req, res) => {
     });
   } catch (error) {
     console.error('Error in POST handler:', error);
-    res.status(500).send('Error uploading the file');
+    res.status(500).send('Error Uploading The File');
   }
 };

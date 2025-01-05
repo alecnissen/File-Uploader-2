@@ -15,14 +15,17 @@
         <input type="text" name="username" required>
         <label>Password</label>
         <input type="password" name="password" required>
-        <button type="submit">Submit</button>
+        <button type="submit" class="create-user-submit-btn">Submit</button>
     </form>
 
     <br>
 
     <button class="create-user-back-to-home-button-styles">
-    <a href="/">Back to home</a>
+    <a href="/">Back To Home</a>
     </button>
+
+    <br>
+    <br>
 
     <% if (errors && errors.length > 0) { %>
       <% errors.forEach(function(error) { %>
@@ -42,7 +45,7 @@
     if (messageStyles) {
       setTimeout(() => {
         messageStyles.style.display = 'none';
-      }, 3000);
+      }, 10000);
     }
 
   </script>

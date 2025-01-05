@@ -8,7 +8,7 @@
 </head>
 <body class="file-info-body-wrapper">
 
-    <h1 class="file-information-header">File Information</h1>
+    <h1 class="file-information-header">File Information & Management</h1>
 
     <button class="view-file-back-btn"> 
       <a href="/view_folders">Back</a>
@@ -39,23 +39,23 @@
                 <br>
                 <div>Created At: <%=file.createdAt %></div>
                 <br>
-                <div>File Size: <%=file.size %></div>
+                <div>File Size: <%=file.size %>mb</div>
 
                 <br>
                 
-               <button class="download-file-styles"><a href="/download_file/<%=file.id %>" download>Download</a></button>
+               <button class="download-file-styles"><a href="/download_file/<%=file.id %>" download>Download File</a></button>
                 
                 <br>
                 <br>
             
                 <form action="/view_file_information/<%= currentFolder.id %>/<%= file.id %>" method="POST">
-                    <button type="submit">Upload This File</button>
+                    <button type="submit">Upload File To Your Cloud</button>
                 </form>
 
                 <br>
 
                 <form action="/delete_file/<%= currentFolder.id %>/<%= file.id %>?_method=DELETE" method="post">
-                     <button type="submit">Delete This File</button>
+                     <button type="submit">Delete File</button>
                 </form>
                    
                 </div>
@@ -85,7 +85,7 @@
       if (messageStyles) {
         setTimeout(() => {
           messageStyles.style.display = 'none';
-        }, 3000);
+        }, 10000);
       }
 
     </script>
