@@ -54,7 +54,17 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/FU-login-error-rm.png" style="width:400px">
 
+
 <img src="assets/FU-login-success-rm.png" style="width:400px">
+
+- More authentication, ensuring no duplicate users 
+
+<img src="assets/FU-taken-username-rm.png" style="width:400px">
+
+- Validation checks to ensure there is no duplicate folder names for the user
+
+<img src="assets/FU-taken-folder-name-rm.png" style="width:400px">
+
 
 - Users can create folders and upload files into them. A success or error message will display to alert the user if file upload was successful
 
@@ -62,7 +72,7 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/FU-file-upload-success-rm.png" style="width:400px">
 
-- Users can change the folder name
+- Users can edit the folder name
 
 <img src="assets/FU-edit-folder-rm.png" style="width:400px">
 
@@ -73,6 +83,10 @@ then ``` npm install ``` which will install all dependency's and packages.
 <img src="assets/FU-upload-file-cloud-rm.png" style="width:400px">
 
 - Users can download the files and also delete files. The user can also delete the folder entirely erasing all the files within that folder
+
+<img src="assets/FU-delete-1-rm.png" style="width:400px">
+<img src="assets/FU-delete-2-rm.png" style="width:400px">
+
 
 - Folders are unique to each user. Another user cannot view other users folders
 
