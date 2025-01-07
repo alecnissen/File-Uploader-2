@@ -25,7 +25,7 @@ Project was created using Node.js, Express.js, EJS, PostgreSQL, Primsa, Passport
  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
-
+<img src="https://img.shields.io/badge/ejs-%23B4CA65.svg?style=for-the-badge&logo=ejs&logoColor=black">
 
 <h1>Getting Started</h1>
 
@@ -35,10 +35,10 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <h1>Demo Video</h1>
 
-(<video src="assets/File-Uploader-Project-Breakdown.mp4" class="fashion-gems-demo-styles" controls poster="assets/File-Upload-Breakdown-Thumbnail.png">
-    <source src="assets/File-Uploader-Project-Breakdown.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-</video>)
+<img src="assets/File-Upload-Breakdown-Thumbnail.png" />
+
+[Watch the demo video on YouTube](https://www.youtube.com/watch?v=gwKTYj_1Dlg&t=1s)
+
 
 <h1>Features</h1>
 
