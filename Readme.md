@@ -40,7 +40,7 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/File-Upload-Breakdown-Thumbnail.png" />
 
-<a href="https://www.youtube.com/watch?v=gwKTYj_1Dlg&t=1s" target="_blank">Watch the demo video on YouTube</a>
+[Watch the demo video on YouTube](https://www.youtube.com/watch?v=gwKTYj_1Dlg&t=1s) (Right-click and select "Open link in new tab" to open in a new tab)
 
 
 <h1>Features</h1>
