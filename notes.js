@@ -323,6 +323,14 @@
 
 // using prisma ORM 
 
+
+
+
 // writing postgreSQL queries 
 
 // 
+
+
+// *** read me refactor 
+
+// put error messages for creating user, user name already taken

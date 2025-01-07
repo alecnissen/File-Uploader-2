@@ -1,18 +1,20 @@
 <h1>About This Project</h1> 
-Project was created using Node.js, Express.js, EJS, PostgreSQL, Primsa, Passport.js HTML, and CSS. The purpose of this project was to create a mini verison of a Google drive. Users can be created, authenticated users can then create folders, upload files into them, those files can then be uploaded into the cloud for storage. Users can also edit folder names, download files, delete folders, delete files and also users can only view their own folders. This project is an excellent example of using core backend concepts such as using the MVC pattern, GET, DELETE, UPDATE and PATCH requests, using Express.js to handle asynchronous operations, using Multer middleware, and performing CRUD operations on the database using PostgreSQL and Prisma ORM. 
+This project was created using Node.js, Express.js, EJS, PostgreSQL, Primsa, Passport (password authentication), Multer (file upload library),  HTML, and CSS. The purpose of this project was to create a mini version of Google drive. Users can create an account and login. Once logged in, users are able to create, view, edit, and delete folders. Once folders are created files can be uploaded to them. Users can view their file details, download files they have previously uploaded, upload their files to their cloud for secure storage, and delete files when needed.
 
+<br>
+The file uploader project follows the MVC (Model-View-Controller) design pattern, which helps in organizing the codebase by separating the application logic into three interconnected components. My project also has full CRUD (Create, Read, Update, and Delete) capabilities. These operations are implemented using HTTP methods, including GET for retrieving data, POST for creating new entries, PATCH for updating existing records, and DELETE for removing data, ensuring a robust and flexible API.
 <br> 
 
-<h1>What I learned</h1>
+<h1>Project Completion Highlights</h1>
     <ul>
     <li>User authentication with Passport.js</li>
-<li>Using the MVC pattern to structure the website and separate code</li>
-<li>Practice with Express.js middleware to handle requests and asynchronous operations</li>
+<li>MVC pattern for separating application logic</li>
+<li>Express.js middleware to handle requests and asynchronous operations</li>
 <li>Form validation and sanitization</li>
 <li>Using Multer middleware for file uploads
-<li>Cloudinary for cloud based file storage</li>
-<li>Writing PostgreSQL queries and Prisma ORM for creating, reading, updating and deleting data </li>
-<li>Using EJS to dynamically render content, for example user logs in and see's a welcome message or displaying all the folders associated with a user</li>
+<li>Cloud based file storage</li>
+<li>PostgreSQL queries and Prisma ORM for creating, reading, updating and deleting data </li>
+<li>EJS views to dynamically render content</li>
 
  
 
@@ -42,19 +44,19 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <h1>Features</h1>
 
-- Welcome page where users can log in or choose to create a user.
+- Welcome page where users can log in or choose to create a user
 
 <img src='assets/FU-Homepage-rm.png' style="width:400px">
 
 <img src='assets/FU-Create-user-rm.png' style="width:400px">
 
-- User authentication and validation to ensure only users with valid credentials can log in.
+- User authentication and validation to ensure only users with valid credentials can log in
 
 <img src="assets/FU-login-error-rm.png" style="width:400px">
 
 <img src="assets/FU-login-success-rm.png" style="width:400px">
 
-- Users can create folders and upload files into them. A success or error message will display to alert the user if file upload was successful.
+- Users can create folders and upload files into them. A success or error message will display to alert the user if file upload was successful
 
 <img src="assets/FU-create-folder-rm.png" style="width:400px">
 
@@ -66,13 +68,13 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/FU-edit-folder-page-rm.png" style="width:400px">
 
-- Files can be uploaded to the cloud for storage. A success or error message will be displayed to alert the user if file upload was successful.
+- Files can be uploaded to the cloud for storage. A success or error message will be displayed to alert the user if file upload was successful
 
 <img src="assets/FU-upload-file-cloud-rm.png" style="width:400px">
 
-- Users can download the files and also delete files. The user can also delete the folder entirely erasing all the files within that folder.
+- Users can download the files and also delete files. The user can also delete the folder entirely erasing all the files within that folder
 
-- Folders are unique to each user. Another user cannot view other users folders. 
+- Folders are unique to each user. Another user cannot view other users folders
 
 <img src="assets/FU-login-success-rm.png" style="width:400px">
 <img src="assets/FU-user1-folders-rm.png" style="width:400px">
