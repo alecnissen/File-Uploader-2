@@ -19,7 +19,7 @@ The file uploader project follows the MVC (Model-View-Controller) design pattern
 
  
 
- <h1>Build With</h1>
+ <h1>Built With</h1>
 
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
