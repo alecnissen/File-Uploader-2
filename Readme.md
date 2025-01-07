@@ -35,10 +35,10 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <h1>Demo Video</h1>
 
-<video src="assets/File-Uploader-Project-Breakdown.mp4" class="fashion-gems-demo-styles" controls poster="assets/File-Upload-Breakdown-Thumbnail.png">
+(<video src="assets/File-Uploader-Project-Breakdown.mp4" class="fashion-gems-demo-styles" controls poster="assets/File-Upload-Breakdown-Thumbnail.png">
     <source src="assets/File-Uploader-Project-Breakdown.mp4" type="video/mp4" />
     Your browser does not support the video tag.
-</video>
+</video>)
 
 <h1>Features</h1>
 
