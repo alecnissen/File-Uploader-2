@@ -1,5 +1,5 @@
 <h1>About This Project</h1> 
-Project was created using Node.js, Express.js, EJS, PostgreSQL, primsa, passport.js HTML, and CSS. The purpose of this project was to create a mini verison of a Google drive. Users can be created, authenticated users can then create folders, upload files into them, those files can then be uploaded into the cloud for storage. Users can also edit folder names, download files, delete folders and also users can only view their own folders. This project is an excellent example of using core backend concepts such as using the MVC pattern, GET, DELETE, UPDATE and PATCH requests, using Express.js to handle asynchronous operations, using Multer middleware, and performing CRUD operations on the database using PostgreSQL and Prisma ORM. 
+Project was created using Node.js, Express.js, EJS, PostgreSQL, Primsa, Passport.js HTML, and CSS. The purpose of this project was to create a mini verison of a Google drive. Users can be created, authenticated users can then create folders, upload files into them, those files can then be uploaded into the cloud for storage. Users can also edit folder names, download files, delete folders, delete files and also users can only view their own folders. This project is an excellent example of using core backend concepts such as using the MVC pattern, GET, DELETE, UPDATE and PATCH requests, using Express.js to handle asynchronous operations, using Multer middleware, and performing CRUD operations on the database using PostgreSQL and Prisma ORM. 
 
 <br> 
 
@@ -11,8 +11,8 @@ Project was created using Node.js, Express.js, EJS, PostgreSQL, primsa, passport
 <li>Form validation and sanitization</li>
 <li>Using Multer middleware for file uploads
 <li>Cloudinary for cloud based file storage</li>
-<li>Writing postgreSQL queries and using prisma ORM</li>
-<li>Using EJS to dynamically render content, for example user logs in and sees welcome message or displaying all the folders associated with a user</li>
+<li>Writing PostgreSQL queries and Prisma ORM for creating, reading, updating and deleting data </li>
+<li>Using EJS to dynamically render content, for example user logs in and see's a welcome message or displaying all the folders associated with a user</li>
 
  
 
@@ -32,6 +32,13 @@ Project was created using Node.js, Express.js, EJS, PostgreSQL, primsa, passport
 To get project cloned locally: git clone git@github.com:alecnissen/File-Uploader-2.git
 
 then ``` npm install ``` which will install all dependency's and packages.
+
+<h1>Demo Video</h1>
+
+<video src="assets/File-Uploader-Project-Breakdown.mp4" class="fashion-gems-demo-styles" controls poster="assets/File-Upload-Breakdown-Thumbnail.png">
+    <source src="assets/File-Uploader-Project-Breakdown.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
 
 <h1>Features</h1>
 
@@ -63,9 +70,9 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/FU-upload-file-cloud-rm.png" style="width:400px">
 
-- Users can download the files and also delete the file. The user can also delete the folder entirely erasing all the files within that folder.
+- Users can download the files and also delete files. The user can also delete the folder entirely erasing all the files within that folder.
 
-- Folders are unique to each user. Another user cannot view another users folders. 
+- Folders are unique to each user. Another user cannot view other users folders. 
 
 <img src="assets/FU-login-success-rm.png" style="width:400px">
 <img src="assets/FU-user1-folders-rm.png" style="width:400px">
