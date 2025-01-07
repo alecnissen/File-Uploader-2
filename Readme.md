@@ -55,7 +55,7 @@ then ``` npm install ``` which will install all dependency's and packages.
 
 <img src="assets/FU-login-error-rm.png" style="width:400px">
 
-
+<img src="assets/FU-incorrect-username-rm.png" style="width:400px">
 <img src="assets/FU-login-success-rm.png" style="width:400px">
 
 - More authentication, ensuring no duplicate users 
