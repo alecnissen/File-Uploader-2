@@ -317,3 +317,12 @@
 // *** need to fix the local host error in the database 
 
 // 
+
+
+// what features would I like to talk about in the readme 
+
+// using prisma ORM 
+
+// writing postgreSQL queries 
+
+// 
