@@ -2,6 +2,7 @@
 This project was created using Node.js, Express.js, EJS, PostgreSQL, Primsa, Passport (password authentication), Multer (file upload library),  HTML, and CSS. The purpose of this project was to create a mini version of Google drive. Users can create an account and login. Once logged in, users are able to create, view, edit, and delete folders. Once folders are created files can be uploaded to them. Users can view their file details, download files they have previously uploaded, upload their files to their cloud for secure storage, and delete files when needed.
 
 <br>
+<br>
 The file uploader project follows the MVC (Model-View-Controller) design pattern, which helps in organizing the codebase by separating the application logic into three interconnected components. My project also has full CRUD (Create, Read, Update, and Delete) capabilities. These operations are implemented using HTTP methods, including GET for retrieving data, POST for creating new entries, PATCH for updating existing records, and DELETE for removing data, ensuring a robust and flexible API.
 <br> 
 
