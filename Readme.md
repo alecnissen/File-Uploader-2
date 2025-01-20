@@ -11,7 +11,7 @@ The file uploader project follows the MVC (Model-View-Controller) design pattern
     <li>User authentication with Passport.js</li>
 <li>MVC pattern for separating application logic</li>
 <li>Express.js middleware to handle requests and asynchronous operations</li>
-<li>Form validation and sanitization</li>
+<li>Form validation and sanitation</li>
 <li>Using Multer middleware for file uploads
 <li>Cloud based file storage</li>
 <li>PostgreSQL queries and Prisma ORM for creating, reading, updating and deleting data </li>
